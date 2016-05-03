@@ -1,15 +1,45 @@
 ---
-layout: default
+layout: dorm
 ---
 <div class="post">
 
-  <header class="post-header">
+  <div class="col-md-4 facts">
+    <div class="facts-fixed">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+    <ul class="list-group list-facts">
+      <li class="list-group-item fact-item">
+        <i class="fa fa-location-arrow" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Location"></i> &nbsp; <a class="fact-link" href="{{ page.maplink }}" target="_blank">{{ page.address }}</a>
+      </li>
+      <li class="list-group-item fact-item">
+        <i class="fa fa-usd" data-toggle="tooltip" data-placement="left" title="Cost (Lowest)"></i> &nbsp; <a class="fact-link" href="https://www.utexas.edu/student/housing/index.php?site=1&scode=0&id=75" target="_blank">{{ page.price }}/Long Session</a>
+      </li>
+      <li class="list-group-item fact-item">
+        <i class="fa fa-users" data-toggle="tooltip" data-placement="left" title="Gender"></i> &nbsp; <span>{{ page.gender }}</span>
+      </li>
+      <li class="list-group-item fact-item">
+        <i class="fa fa-cutlery" data-toggle="tooltip" data-placement="left" title="Nearest Dining Hall"></i> &nbsp; <span>{{ page.dining }}</span>
+      </li>
+      <li class="list-group-item fact-item">
+        <i class="fa fa-external-link"></i> &nbsp; <a class="fact-link lower" href="http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=118" target="_blank">UT Housing Description</a>
+      </li>
+    </ul>
+      <a class="btn btn-sm nav-btn" aria-label="home" href="/"><i class="fa fa-lg fa-home"></i>Home</a>
+      {% if page.prev-dorm %}
+      <a class="btn btn-sm nav-btn" aria-label="previous" href="/{{ page.prev-dorm }}"><i class="fa fa-lg fa-chevron-left"></i>{{ page.prev-dorm }}</a>
+      {% endif %}
+      {% if page.next-dorm %}
+      <a class="btn btn-sm nav-btn" aria-label="next" href="/{{ page.next-dorm }}"><i class="fa fa-lg fa-chevron-right"></i>{{ page.next-dorm | capitalize }}</a>
+      {% endif %}
+    </div>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+  </div>
+  <div class="col-md-8 main">
+    <img src="{{ page.hero }}" class="img-responsive" alt="Andrews Dormitory">
+    <p class="post-meta">Photo Credit: <a href="http://www.dailytexanonline.com/author/junyuan-tan" target="_blank">Junyuan Tan</a></p>
+    <article class="post-content">
+      {{ content }}
+    </article>
+  </div>
 
 </div>
+

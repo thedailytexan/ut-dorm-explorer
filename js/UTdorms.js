@@ -1,5 +1,4 @@
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
-
 var geoData = [
     {
         "type": "FeatureCollection",
@@ -276,68 +275,49 @@ var geoData = [
         ]
     }
 ];
-
-var map = L.mapbox.map('homepage-map', 'mapbox.streets')
-    .setView([30.287, -97.738], 16);
-
+var attractions = "yes";//FIXME add geoJSON layer of important things on campus w/hover markers
+var southWest = L.latLng(30.293, -97.732),
+    northEast = L.latLng(30.281, -97.743),
+    bounds = L.latLngBounds(southWest, northEast);
+var map = L.mapbox.map('homepage-map', 'mapbox.streets', {
+    maxBounds: bounds,
+    minZoom: 14
+}).setView([30.287, -97.738], 16);
+map.fitBounds(bounds)
 var listings = document.getElementById('listings');
 var locations = L.mapbox.featureLayer().addTo(map);
-
 locations.setGeoJSON(geoData);
-
 function setActive(el) {
     var siblings = listings.getElementsByTagName('div');
     for (var i = 0; i < siblings.length; i++) {
         siblings[i].className = siblings[i].className
             .replace(/active/, '').replace(/\s\s*$/, '');
     }
-
     el.className += ' active';
 }
-
 locations.eachLayer(function (locale) {
-
-    // Shorten locale.feature.properties to just `prop` so we're not
-    // writing this long form over and over again.
     var prop = locale.feature.properties;
-
-    // Each marker on the map.
     var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>";
-
     var listing = listings.appendChild(document.createElement('div'));
     listing.className = 'list-item';
-
     var link = listing.appendChild(document.createElement('a'));
-    link.href = '#';
+    link.href = '/' + prop.link;
     link.className = 'title';
-
     link.innerHTML = prop.name;
-
-    link.onclick = function () {
+    var direct_link = listing.appendChild(document.createElement('a'));
+    direct_link.href = '#';
+    direct_link.className = 'direct-link';
+    direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
+    direct_link.onclick = function () {
         setActive(listing);
-
-        // When a menu item is clicked, animate the map to center
-        // its associated locale and open its popup.
         map.setView(locale.getLatLng(), 18);
         locale.openPopup();
         return false;
     };
-
-    var direct_link = listing.appendChild(document.createElement('a'));
-    direct_link.href = '/' + prop.link;
-    direct_link.target = '_blank';
-    direct_link.className = 'direct-link';
-    direct_link.innerHTML = "<i class='fa fa-external-link'></i>";
-
-    // Marker interaction
     locale.on('click', function (e) {
-        // 1. center the map on the selected marker.
-        map.panTo(locale.getLatLng());
-
-        // 2. Set active the markers associated listing.
+        map.setView(locale.getLatLng(), 18);
         setActive(listing);
     });
-
     popup += '</div>';
     locale.bindPopup(popup);
 });

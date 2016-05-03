@@ -90,11 +90,17 @@
  * Site footer
  */
 .site-footer {
-  border-top: 3px solid black;
+  border-top: 9px solid $grey-color-light;
   padding: 1em 0;
   width: 77.5%;
   margin: auto;
   margin-top: 1em;
+  @include media-query($on-palm) {
+    width: 88%;
+  }
+  @include media-query($on-mobile) {
+    width: 100%;
+  }
 }
 
 .footer-heading {
@@ -118,6 +124,7 @@
 .footer-txt {
   font-size: 1.5rem;
   margin: auto;
+  margin-bottom: 1em;
 }
 
 .footer-col {
@@ -182,8 +189,12 @@
   }
 }
 
+img {
+  margin-bottom: .5rem;
+}
+
 .post-meta {
-  font-size: $small-font-size;
+  font-size: 1.25rem;
   color: $grey-color;
 }
 
@@ -226,12 +237,20 @@
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1;
+  font-size: 8rem;
+  font-family: Sentinel;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
 
   @include media-query($on-laptop) {
-    font-size: 36px;
+    font-size: 6rem;
   }
 }
 
+.post-address {
+  text-transform: uppercase;
+}
 .post-content {
   margin-bottom: $spacing-unit;
 

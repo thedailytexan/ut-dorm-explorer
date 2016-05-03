@@ -183,10 +183,17 @@ pre {
   background: none;
   margin: auto;
   width: 77.5%;
-  border-bottom: 3px solid darken($grey-color, 30%);
-  padding: 1em 0 1em 0;
+  border-bottom: 9px solid $brand-color;
+  padding: 1rem 0;
   margin-top: 1em;
   margin-bottom: 1em;
+  @include media-query($on-palm) {
+    width: 88%;
+  }
+  @include media-query($on-mobile){
+    padding: 0;
+    width: 100%;
+  }
 
   .container-fluid {
     padding: 0;
@@ -206,15 +213,18 @@ pre {
 }
 
 .navbar-brand-custom {
-  font-size: 4.5rem;
+  font-size: 3.25em;
   color: $brand-color !important;
   text-transform: uppercase;
   font-weight: bold;
   line-height: 1.25;
+  @include media-query($on-palm) {
+    font-size: 2em;
+  }
 }
 
 .navbar-subhead {
-  font-size: 1.75rem;
+  font-size: 3rem;
   color: #505050;
   font-family: Sentinel;
   font-style: italic;
@@ -237,6 +247,9 @@ pre {
 .listings {
   font-size: 1.8rem;
   border: 1px solid lighten($grey-color, 40%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   .list-item {
     border-bottom: 1px solid lighten($grey-color, 40%);
     padding: 4px 1.5rem 2px 1.5rem;
@@ -259,11 +272,11 @@ pre {
 .direct-link {
   float: right;
   font-size: 1.5rem;
-  color: $grey-color-dark;
+  color: lighten(#43a4c3, 10%);
   line-height: 2;
 }
 .direct-link:hover {
-  color: gray !important;
+  color: #43a4c3 !important;
 }
 
 .list-item:last-of-type {
@@ -278,7 +291,7 @@ pre {
     text-decoration: none;
   }
   a:hover, .direct-link:hover {
-    color: darken(#fff, 5%) !important;
+    color: #fff !important;
   }
 }
 
@@ -288,4 +301,104 @@ pre {
 
 .footer-icon:hover {
   color: darken($brand-color, 10%);
+}
+
+.dorm-container {
+  padding: 0 2.5rem 0 2.5rem;
+  @include media-query($on-mobile){
+    padding: 0;
+  }
+}
+
+.facts {
+  padding: 1em;
+
+  @include media-query($on-palm){
+    border-right: 0;
+    border-bottom: 1px solid lighten($grey-color, 25%);
+    padding: 0 0 2em 0;
+  }
+}
+
+.facts-fixed {
+  position: fixed;
+  margin: auto;
+  padding-left: 1em;
+  ul {
+    width: 100%;
+  }
+  @include media-query($on-laptop){
+    width: 13.5em;
+  }
+  @include media-query($on-palm){
+    position: relative;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.main {
+  border-left: 1px solid lighten($grey-color, 25%);
+  padding: 0 .25em 0 1.5em;
+  @include media-query($on-palm){
+    border-left: 0;
+    margin-top: 2em;
+    padding: 0 1em 0 1em;
+  }
+}
+
+.list-facts {
+  margin: 0;
+}
+.fact-item {
+  padding: 1rem;
+  margin: auto;
+  font-weight: normal;
+}
+
+article {
+  margin-top: 1rem;
+  h1, h2, h3, h4 {
+    font-family: Sentinel;
+    font-weight: bold;
+  }
+  h4, h5, h6 {
+    font-family: Sentinel;
+    font-weight: 300;
+  }
+  h5 {
+    @include media-query($on-mobile){
+      font-size: 1.8rem;
+    }
+  }
+  blockquote {
+    border-left-color: lighten($brand-color, 10%);
+    padding-left: 1rem;
+    p {
+      font-family: Sentinel;
+      font-weight: 300;
+      font-size: 3rem;
+      color: $grey-color-dark;
+      display: inline;
+      @include media-query($on-mobile){
+        font-size: 2.5rem;
+      }
+    }
+  }
+  hr {
+    margin: 1em 0 1em 0;
+  }
+}
+
+.btn.nav-btn {
+  background: none;
+  border: 1px solid lighten($grey-color, 25%);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin-top: 1em;
+  i {
+    margin-right: .5rem;
+  }
 }
