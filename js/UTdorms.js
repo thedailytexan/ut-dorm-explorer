@@ -6,7 +6,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Andrews",
@@ -24,7 +24,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "link": "blanton",
@@ -42,7 +42,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Brackenridge",
@@ -60,7 +60,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "link": "carothers",
@@ -78,7 +78,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "link": "creekside",
@@ -96,7 +96,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "link": "duren",
@@ -114,11 +114,11 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Jester East",
-                    "link": "jeast",
+                    "link": "jester%20east",
                     "address": "201 East 21st Street"
                 },
                 "geometry": {
@@ -132,11 +132,11 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Jester West",
-                    "link": "jwest",
+                    "link": "jester%20west",
                     "address": "201 East 21st Street"
                 },
                 "geometry": {
@@ -150,7 +150,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "link": "kinsolving",
@@ -168,7 +168,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "link": "littlefield",
@@ -186,11 +186,11 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Moore-Hill",
-                    "link": "moorehill",
+                    "link": "moore-hill",
                     "address": "304 East 21st Street"
                 },
                 "geometry": {
@@ -204,7 +204,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Prather",
@@ -222,7 +222,7 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "Roberts",
@@ -240,10 +240,11 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
                     "name": "San Jacinto",
+                    "link": "san%20jacinto",
                     "address": "309 East 21st Street"
                 },
                 "geometry": {
@@ -257,10 +258,10 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
-                    "marker-color": "#fd9159",
+                    "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
-                    "link": "whitis",
+                    "link": "whitis%20court",
                     "name": "Whitis Court",
                     "address": "2610 Whitis Avenue"
                 },
@@ -275,18 +276,127 @@ var geoData = [
         ]
     }
 ];
-var attractions = "yes";//FIXME add geoJSON layer of important things on campus w/hover markers
+var geoJSON_attractions = [
+    {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#d0d0d0",
+                    "marker-size": "small",
+                    "marker-symbol": "america-football",
+                    "name": "Darrell K Royal - Texas Memorial Stadium"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.7325189113617,
+                        30.283686785034806
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#d0d0d0",
+                    "marker-size": "small",
+                    "marker-symbol": "basketball",
+                    "name": "Gregory Gym"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.7363920211792,
+                        30.28396472774488
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#d0d0d0",
+                    "marker-size": "small",
+                    "marker-symbol": "library",
+                    "name": "Perry-Casteñeda Library"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.7382481098175,
+                        30.282788098216884
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#d0d0d0",
+                    "marker-size": "small",
+                    "marker-symbol": "town-hall",
+                    "name": "Main Building (UT Tower)"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73939609527588,
+                        30.28604927297253
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#d0d0d0",
+                    "marker-size": "small",
+                    "marker-symbol": "art-gallery",
+                    "name": "Blanton Museum of Art"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73743271827698,
+                        30.281027759978798
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#d0d0d0",
+                    "marker-size": "small",
+                    "marker-symbol": "art-gallery",
+                    "name": "Harry Ransom Center"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.74125218391418,
+                        30.28433531680018
+                    ]
+                }
+            }
+        ]
+    }
+];
 var southWest = L.latLng(30.293, -97.732),
     northEast = L.latLng(30.281, -97.743),
     bounds = L.latLngBounds(southWest, northEast);
+
 var map = L.mapbox.map('homepage-map', 'mapbox.streets', {
     maxBounds: bounds,
     minZoom: 14
 }).setView([30.287, -97.738], 16);
 map.fitBounds(bounds)
+
 var listings = document.getElementById('listings');
 var locations = L.mapbox.featureLayer().addTo(map);
 locations.setGeoJSON(geoData);
+
+var attractions = L.mapbox.featureLayer().addTo(map);
+attractions.setGeoJSON(geoJSON_attractions);
+
+
 function setActive(el) {
     var siblings = listings.getElementsByTagName('div');
     for (var i = 0; i < siblings.length; i++) {
@@ -295,6 +405,7 @@ function setActive(el) {
     }
     el.className += ' active';
 }
+
 locations.eachLayer(function (locale) {
     var prop = locale.feature.properties;
     var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>";
@@ -318,8 +429,12 @@ locations.eachLayer(function (locale) {
         map.setView(locale.getLatLng(), 18);
         setActive(listing);
     });
-    popup += '</div>';
     locale.bindPopup(popup);
 });
 
+attractions.eachLayer(function(layer){
+    var prop = layer.feature.properties;
+    var attraction_popup = '<span>' + prop.name + '</span>';
+    layer.bindPopup(attraction_popup);
+});
 

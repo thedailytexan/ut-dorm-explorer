@@ -183,16 +183,18 @@ pre {
   background: none;
   margin: auto;
   width: 77.5%;
-  border-bottom: 9px solid $brand-color;
+  border-bottom: 12px solid $brand-color;
   padding: 1rem 0;
   margin-top: 1em;
   margin-bottom: 1em;
   @include media-query($on-palm) {
     width: 88%;
+    border-bottom-width: 6px;
   }
   @include media-query($on-mobile){
     padding: 0;
     width: 100%;
+    border-bottom-width: 4px;
   }
 
   .container-fluid {
@@ -367,6 +369,8 @@ article {
     font-weight: 300;
   }
   h5 {
+    font-style: italic;
+    font-size: 1.6rem;
     @include media-query($on-mobile){
       font-size: 1.8rem;
     }
@@ -377,7 +381,7 @@ article {
     p {
       font-family: Sentinel;
       font-weight: 300;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: $grey-color-dark;
       display: inline;
       @include media-query($on-mobile){

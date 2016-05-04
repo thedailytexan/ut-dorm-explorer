@@ -237,14 +237,14 @@ img {
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1;
-  font-size: 8rem;
+  font-size: 6rem;
   font-family: Sentinel;
   font-weight: 300;
   font-style: italic;
   text-align: center;
 
   @include media-query($on-laptop) {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 }
 
