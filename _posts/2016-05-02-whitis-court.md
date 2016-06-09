@@ -10,22 +10,16 @@ dining: Kinsolving, Littlefield Patio Cafe
 UTLink: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=117
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
 
-prev-dorm: roberts
+prev-dorm: san jacinto
 ---
 
-#Whitis Court is x and y and z#
-
-Here's some random text about Whitis Court.
+Whitis Court has a unique story among UT’s 15 on campus dormitories. In 1999 the university bought two co-ops from a private company, and bought the other four in 2003 in order to transform them into a residence hall. Overall Whitis Court houses 197 students throughout the 6 buildings. Each building has movable furniture and community bathrooms. The dormitory features several large living rooms, community kitchens, a classroom facility and a conference room. The Drag (a major street parallel to campus with many dining and shopping options), the communication school, and Kinsolving Dining Hall are all near Whitis Court.
 
 ---
 
 ##Pros##
 
 > Here's a cool short blockquote that sums up good feelings about San Jacinto.
-
-#####Angelo Cioffi, Computer Science Freshman#####
-
----
 
 "Loved living in the dorms. While I miss not having a kitchen and having more space and privacy, I felt like it was well worth it to live on campus. I met my best friends on my floor, including my roommate. It's convenient to have Cypress Bend on the ground floor of my dorm, with JCL close by. San Jac definitely feels like one of the safest and most welcoming dorms too." 
 
@@ -39,15 +33,9 @@ Here's some random text about Whitis Court.
 
 #####Name, year#####
 
----
-
 ##Cons##
 
 > A blockquote from the :( section.
-
-#####Angelo Cioffi, Computer Science Freshman#####
-
----
 
 "Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
 

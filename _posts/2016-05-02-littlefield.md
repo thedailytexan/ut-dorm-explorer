@@ -14,9 +14,7 @@ next-dorm: moore-hill
 prev-dorm: kinsolving
 ---
 
-#Littlefield is x and y and z#
-
-Here's some random text about Littlefield.
+Littlefield is the smaller of the female-only dormitories at UT. Built in 1927, it is also the oldest. The dormitory stands on the north side of the honors quad, is made up of three floors and holds 152 women. It features movable furniture and community bathrooms. Hand painted ceiling beams and a fireplace are only some of the nice architectural touches in the historical dorm that can only be appreciated from within. Littlefield Patio Cafe sits next to the dorm, allowing easy access to food for hungry students. The Drag, the communication school, and Kinsolving Dining Hall are all in close proximity to Littlefield.
 
 ---
 
@@ -28,13 +26,13 @@ Here's some random text about Littlefield.
 
 ---
 
-"Loved living in the dorms. While I miss not having a kitchen and having more space and privacy, I felt like it was well worth it to live on campus. I met my best friends on my floor, including my roommate. It's convenient to have Cypress Bend on the ground floor of my dorm, with JCL close by. San Jac definitely feels like one of the safest and most welcoming dorms too." 
+"Littlefield was very tiny but quaint. It felt 'homey' even though it was a little cramped. We even figured out a way to unbunk our beds by stacking shelves on top of other furniture. However, because it is very small and the walls are thin, we got quite a few noise complaints....on the weekend. It's an honors dorm, so we guessed people were trying to study. So, I don't recommend it if you like to party on weekends! Also, there are shared hall bathrooms. It is nice that your washer/dryer are on the same floor though." 
 
-#####Angelo Cioffi, Computer Science Freshman#####
+#####Caroline, civil engineering senior#####
 
-"I loved living in San Jacinto. It was a dorm full of fun and smart people. I made all of my friends there freshman year, and always had people to eat with, watch movies with, go out with, etc. There were always plenty of places to study and hang out with others, and the building is incredibly designed to last for several years. My only dislike is the size of the rooms, but it's part of the college experience."
+"Littlefield is a veery quiet dorm. If you want to make friends in your hall, you should not live there. But the rooms are pretty; I liked the calming, green accent wall they each have. The advantage to the not very friendly/outgoing vibe is that the Littlefield Living room is often a great, quiet place to study."
 
-#####Alena Savera, Architecture Senior#####
+#####Chelsea, psychology sophomore#####
 
 "Here's another quote."
 

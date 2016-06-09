@@ -20,6 +20,14 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
+        $('.selectpicker').selectpicker({
+            dropupAuto: false
+        });
+        $('.selectpicker').on('changed.bs.select', function(e){
+            $(this).on('hide.bs.select', function(e){
+                window.location = '/' + $('.dropdown-toggle').attr('title');
+            });
+        });
     });
 </script>
 

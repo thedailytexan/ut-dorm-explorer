@@ -14,9 +14,7 @@ next-dorm: carothers
 prev-dorm: blanton
 ---
 
-#Brackenridge is x and y and z#
-
-Here's some random text about Brackenridge.
+Brackenridge is one of the oldest dormitories standing on campus today alongside Prather and Roberts. The three share a small courtyard between them complete with barbecue pits, and tables. Brackenridge itself also has a recreation area and kitchenette for its residents. The coed dormitory was can host 128 students (one of the smallest on campus) spread throughout four floors. It features community bathrooms and movable furniture in each room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Brackenridge.
 
 ---
 
@@ -28,9 +26,9 @@ Here's some random text about Brackenridge.
 
 ---
 
-"Loved living in the dorms. While I miss not having a kitchen and having more space and privacy, I felt like it was well worth it to live on campus. I met my best friends on my floor, including my roommate. It's convenient to have Cypress Bend on the ground floor of my dorm, with JCL close by. San Jac definitely feels like one of the safest and most welcoming dorms too." 
+"It was an old dorm and I wouldn't have lived there without needing a dorm when my apartment fell through sophomore year, but it turned out amazingly. Don't worry about newness of dorms or glamor. That usually will end up being a con rather than a pro." 
 
-#####Angelo Cioffi, Computer Science Freshman#####
+#####Taylor, advertising senior#####
 
 "I loved living in San Jacinto. It was a dorm full of fun and smart people. I made all of my friends there freshman year, and always had people to eat with, watch movies with, go out with, etc. There were always plenty of places to study and hang out with others, and the building is incredibly designed to last for several years. My only dislike is the size of the rooms, but it's part of the college experience."
 

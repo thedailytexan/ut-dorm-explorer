@@ -14,9 +14,7 @@ next-dorm: creekside
 prev-dorm: brackenridge
 ---
 
-#Carothers is x and y and z#
-
-Here's some random text about Carothers.
+Carothers stands on the west side of the honors quad. The coed dormitory, built in 1937, houses 131 students on three floors. Accessible accommodations are available for students who need them, furniture in each dorm room is movable, and the dorm features community bathrooms as well as a computer lab. Similar to Andrews, Carothers also has individual room climate control. However it also has the University Honors Center and a 24-hour desk. The Drag, the communication school, and Kinsolving Dining Hall are all in close proximity to Carothers.
 
 ---
 
@@ -28,13 +26,13 @@ Here's some random text about Carothers.
 
 ---
 
-"Loved living in the dorms. While I miss not having a kitchen and having more space and privacy, I felt like it was well worth it to live on campus. I met my best friends on my floor, including my roommate. It's convenient to have Cypress Bend on the ground floor of my dorm, with JCL close by. San Jac definitely feels like one of the safest and most welcoming dorms too." 
+"I loved it. Great community, great courtyard, great study places. The dorms themselves are pretty average, but I had no serious complaints. I was happy we had a sink." 
 
-#####Angelo Cioffi, Computer Science Freshman#####
+#####Ellen, biology and rhetoric senior#####
 
-"I loved living in San Jacinto. It was a dorm full of fun and smart people. I made all of my friends there freshman year, and always had people to eat with, watch movies with, go out with, etc. There were always plenty of places to study and hang out with others, and the building is incredibly designed to last for several years. My only dislike is the size of the rooms, but it's part of the college experience."
+"The most wonderful quiet place to come home and crash."
 
-#####Alena Savera, Architecture Senior#####
+#####Jason, government freshman#####
 
 "Here's another quote."
 

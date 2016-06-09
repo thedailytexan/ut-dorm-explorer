@@ -324,13 +324,17 @@ pre {
 
 .facts-fixed {
   position: fixed;
+  background: #ffffff;
   margin: auto;
   padding-left: 1em;
+  z-index: 1000;
   ul {
     width: 100%;
   }
   @include media-query($on-laptop){
     width: 13.5em;
+    position: relative;
+    padding-left: 0;
   }
   @include media-query($on-palm){
     position: relative;
@@ -406,3 +410,11 @@ article {
     margin-right: .5rem;
   }
 }
+
+.btn-group.bootstrap-select {
+  color: $brand-color;
+  display: block !important;
+  background: none;
+  margin-top: .75em !important;
+}
+

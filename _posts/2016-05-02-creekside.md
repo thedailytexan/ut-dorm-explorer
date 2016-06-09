@@ -14,9 +14,7 @@ next-dorm: duren
 prev-dorm: carothers
 ---
 
-#Creekside is x and y and z#
-
-Here's some random text about Creekside.
+Creekside, built in 1955, is the University of Texas’ only all male residence hall. It can hold 190 men throughout two floors. Dorm room furniture is built into each room, and residents share community bathrooms as well as a computer lab. It features a sand volleyball court, barbecue pits, a kitchenette, and 24-hour visitation. The dormitory is uniquely situated on campus. It stands in the northeast section of the 40 Acres surrounded by the Cockrell School of Engineering buildings, Performing Arts Center, Butler School of Music buildings, and the fine arts buildings.
 
 ---
 

@@ -14,9 +14,7 @@ next-dorm: prather
 prev-dorm: littlefield
 ---
 
-#Moore-Hill is x and y and z#
-
-Here's some random text about Moore-Hill.
+Moore-Hill was built over a 17 year period from 1939 to 1956. The sprawling coed dormitory spans four floors and houses 386 students. The furniture in each room is built-in, and community bathrooms are spread throughout. It has a 56-inch TV in its lounge and a recreation room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Moore-Hill.
 
 ---
 
@@ -28,17 +26,17 @@ Here's some random text about Moore-Hill.
 
 ---
 
-"Loved living in the dorms. While I miss not having a kitchen and having more space and privacy, I felt like it was well worth it to live on campus. I met my best friends on my floor, including my roommate. It's convenient to have Cypress Bend on the ground floor of my dorm, with JCL close by. San Jac definitely feels like one of the safest and most welcoming dorms too." 
+"I really loved this dorm. I was very skeptical about it coming in because I never knew about it. But it is a very close, tight-knit group. It's a great place to make friends your freshman year." 
 
-#####Angelo Cioffi, Computer Science Freshman#####
+#####Kaitlyn, public health freshman#####
 
-"I loved living in San Jacinto. It was a dorm full of fun and smart people. I made all of my friends there freshman year, and always had people to eat with, watch movies with, go out with, etc. There were always plenty of places to study and hang out with others, and the building is incredibly designed to last for several years. My only dislike is the size of the rooms, but it's part of the college experience."
+"Moorehill is a smaller dorm, so it was usually quiet and calm (unlike Jester across the street that constantly had their students evacuating because of pulled fire alarms.) I lived in MH before it was renovated so things are different now. Like the rooms actually have individual thermostats which would have been super nice when I lived there because it was always too hot in the dorm. Also there's only two study lounges. Usually I'd have to go somewhere else to study. The poolside view of Gregory is really nice though."
 
-#####Alena Savera, Architecture Senior#####
+#####Sherry, journalism senior#####
 
-"Here's another quote."
+"Small community so you recognize most faces pretty quickly and get to know people. Although most of my friends lived in the quad or west campus, a lot of people who lived in Moore-Hill became friends with people in Moore-Hill."
 
-#####Name, year#####
+#####Sam, Plan II/Finance sophomore#####
 
 ---
 
@@ -50,13 +48,13 @@ Here's some random text about Moore-Hill.
 
 ---
 
-"Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
+"The community was kind of weird. Also the bathrooms were pretty dirty. Didn't really make any friends in the dorm, all my friends were from extracurriculars and classes."
 
-#####Andrew Pesek, Chemistry Freshman#####
+#####Ryan, biomedical engineering sophomore#####
 
-"Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
+"I haven't met anyone on my floor. They're all weird and introverted, and gross with bathroom etiquette. I can't wait to move out."
 
-#####Name, year#####
+#####Natalie, economics freshman#####
 
 "Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
 

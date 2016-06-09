@@ -30,6 +30,11 @@ layout: dorm
       {% if page.next-dorm %}
       <a class="btn btn-sm nav-btn" aria-label="next" href="/{{ page.next-dorm }}"><i class="fa fa-lg fa-chevron-right"></i>{{ page.next-dorm | capitalize }}</a>
       {% endif %}
+      <select name="dorm-dropdown" id="dorm-selector" class="selectpicker" data-live-search="true" title="Choose a Dorm" style="font-size: 1rem;">
+        {% for post in site.posts reversed %}
+        <option>{{post.title}}</option>
+        {% endfor %}
+      </select>
     </div>
 
   </div>

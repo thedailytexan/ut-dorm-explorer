@@ -14,9 +14,8 @@ next-dorm: littlefield
 prev-dorm: jester west
 ---
 
-#Kinsolving is x and y and z#
+Kinsolving is one of two all female dorms on campus. It is the larger of the two, holding 735 women throughout five floors. The dormitory was constructed in 1958, and features accessible accommodations, built-in furniture, community or connecting bathrooms, and a computer lab. There are many amenities in Kinsolving, including the Academic Community Center, Kin’s Market (a convenience store), a community garden, a 24-hour desk, a patio and a sun deck. It also has a large buffet style dining hall. The Drag, the communication school, and the Student Services Building are all near Kinsolving.
 
-Here's some random text about Kinsolving.
 
 ---
 
@@ -36,9 +35,9 @@ Here's some random text about Kinsolving.
 
 #####Alena Savera, Architecture Senior#####
 
-"Here's another quote."
+"I liked it overall, but I had some problems with the heating and the sink clogs really easily. I liked having the food and market right downstairs, although I did miss being able to cook."
 
-#####Name, year#####
+#####Natalie, biomedical engineering freshman#####
 
 ---
 
@@ -50,17 +49,17 @@ Here's some random text about Kinsolving.
 
 ---
 
-"Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
+"Would like more late night dining options for north west side campus dorms. Also, there were not many vegetarian options for students in kin's market."
 
-#####Andrew Pesek, Chemistry Freshman#####
+#####Amulya, psychology freshman#####
 
-"Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
+"It is conveniently close to the dining hall, but you have to cross Dean Keeton to get pretty much anywhere!"
 
-#####Name, year#####
+#####Melissa, psychology junior#####
 
-"Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
+"When you share a bathroom between rooms, sometimes several people will throw up in the toilet numerous times and you just gotta remember to clean the toilet after every Friday and Saturday."
 
-#####Name, year#####
+#####Kany, international relations freshman#####
 
 ---
 
