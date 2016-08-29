@@ -1,4 +1,5 @@
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
+//TODO: update all of this data
 var geoData = [
     {
         "type": "FeatureCollection",
@@ -6,12 +7,21 @@ var geoData = [
             {
                 "type": "Feature",
                 "properties": {
+                    //geojson markers
                     "marker-color": "#cc5527",
                     "marker-size": "medium",
                     "marker-symbol": "building",
+                    //details
                     "name": "Andrews",
                     "address": "2401 Whitis Avenue",
-                    "link": "andrews"
+                    "link": "andrews",
+                    "area": '',
+                    'gender': 'co-ed',
+                    //walking directions
+                    'walk_to_greg': 10,
+                    'walk_to_pcl': 10,
+                    'walk_to_drag': 5,
+                    'walk_to_stadium': 15
                 },
                 "geometry": {
                     "type": "Point",
@@ -379,36 +389,37 @@ var geoJSON_attractions = [
         ]
     }
 ];
+// TODO: draw out new boundaries for the maps--instead of markers, use polygons
+// defines our map bounds
 var southWest = L.latLng(30.293, -97.732),
     northEast = L.latLng(30.281, -97.743),
     bounds = L.latLngBounds(southWest, northEast);
-
+// init the map object
 var map = L.mapbox.map('homepage-map', 'mapbox.streets', {
     maxBounds: bounds,
     minZoom: 14
 }).setView([30.287, -97.738], 16);
-map.fitBounds(bounds)
-
+map.fitBounds(bounds);
+// start the markup injection
 var listings = document.getElementById('listings');
 var locations = L.mapbox.featureLayer().addTo(map);
-locations.setGeoJSON(geoData);
-
-var attractions = L.mapbox.featureLayer().addTo(map);
+locations.setGeoJSON(geoData); // add our dorm data to the map
+var attractions = L.mapbox.featureLayer().addTo(map); // add our attractions data to the map
 attractions.setGeoJSON(geoJSON_attractions);
 
-
+// determine which dorm is the active one selected by the user
 function setActive(el) {
     var siblings = listings.getElementsByTagName('div');
     for (var i = 0; i < siblings.length; i++) {
         siblings[i].className = siblings[i].className
-            .replace(/active/, '').replace(/\s\s*$/, '');
+            .replace(/active/, '').replace(/\s\s*$/, ''); // i'm very confused by what this does
     }
     el.className += ' active';
 }
-
+// append the dorms to the list
 locations.eachLayer(function (locale) {
     var prop = locale.feature.properties;
-    var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>";
+    var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>"; // add popups
     var listing = listings.appendChild(document.createElement('div'));
     listing.className = 'list-item';
     var link = listing.appendChild(document.createElement('a'));
@@ -419,19 +430,21 @@ locations.eachLayer(function (locale) {
     direct_link.href = '#';
     direct_link.className = 'direct-link';
     direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
+    // what happens when we click the location icon in the list
     direct_link.onclick = function () {
         setActive(listing);
         map.setView(locale.getLatLng(), 18);
         locale.openPopup();
         return false;
     };
+    // what happens when we click a dorm on the list
     locale.on('click', function (e) {
         map.setView(locale.getLatLng(), 18);
         setActive(listing);
     });
-    locale.bindPopup(popup);
+    locale.bindPopup(popup); // bind the popup to the map
 });
-
+// what happens when we click an attraction in the map
 attractions.eachLayer(function(layer){
     var prop = layer.feature.properties;
     var attraction_popup = '<span>' + prop.name + '</span>';
