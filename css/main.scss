@@ -38,7 +38,7 @@
   font-weight: bolder;
   font-style: italic;
 }
-@font-face {
+/* @font-face {
   font-family: Univers;
   src: url(/assets/Univers.otf);
   font-weight: normal;
@@ -58,13 +58,13 @@
   font-family: Univers;
   src: url(/assets/Univers-Oblique.otf);
   font-style: italic;
-}
+} */
 
 
 
 // Our variables
-$base-font-family: Univers, Helvetica, Arial, sans-serif;
-$header-font-family: Sentinel;
+$base-font-family: Roboto, Helvetica, Arial, sans-serif;
+$header-font-family: Sentinel, Georgia, serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;

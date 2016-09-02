@@ -3,48 +3,56 @@ layout: dorm
 ---
 <div class="post">
 
-  <div class="col-md-4 facts">
-    <div class="facts-fixed">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <ul class="list-group list-facts">
-      <li class="list-group-item fact-item">
-        <i class="fa fa-location-arrow" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Location"></i> &nbsp; <a class="fact-link" href="{{ page.maplink }}" target="_blank">{{ page.address }}</a>
-      </li>
-      <li class="list-group-item fact-item">
-        <i class="fa fa-usd" data-toggle="tooltip" data-placement="left" title="Cost (Lowest)"></i> &nbsp; <a class="fact-link" href="https://www.utexas.edu/student/housing/index.php?site=1&scode=0&id=75" target="_blank">{{ page.price }}/Long Session</a>
-      </li>
-      <li class="list-group-item fact-item">
-        <i class="fa fa-users" data-toggle="tooltip" data-placement="left" title="Gender"></i> &nbsp; <span>{{ page.gender }}</span>
-      </li>
-      <li class="list-group-item fact-item">
-        <i class="fa fa-cutlery" data-toggle="tooltip" data-placement="left" title="Nearest Dining Hall"></i> &nbsp; <span>{{ page.dining }}</span>
-      </li>
-      <li class="list-group-item fact-item">
-        <i class="fa fa-external-link"></i> &nbsp; <a class="fact-link lower" href="{{ page.UTLink }}" target="_blank">UT Housing Description</a>
-      </li>
-    </ul>
-      <a class="btn btn-sm nav-btn" aria-label="home" href="/"><i class="fa fa-lg fa-home"></i>Home</a>
-      {% if page.prev-dorm %}
-      <a class="btn btn-sm nav-btn" aria-label="previous" href="/{{ page.prev-dorm }}"><i class="fa fa-lg fa-chevron-left"></i>{{ page.prev-dorm }}</a>
-      {% endif %}
-      {% if page.next-dorm %}
-      <a class="btn btn-sm nav-btn" aria-label="next" href="/{{ page.next-dorm }}"><i class="fa fa-lg fa-chevron-right"></i>{{ page.next-dorm | capitalize }}</a>
-      {% endif %}
-      <select name="dorm-dropdown" id="dorm-selector" class="selectpicker" data-live-search="true" title="Choose a Dorm" style="font-size: 1rem;">
-        {% for post in site.posts reversed %}
-        <option>{{post.title}}</option>
-        {% endfor %}
-      </select>
-    </div>
+    <div class="col-md-4 facts-container">
+        <div class="facts">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <iframe src="{{ page.iframe }}" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <ul class="list-group list-facts">
+                <li class="list-group-item fact-item">
+                    <i class="fa fa-location-arrow" aria-hidden="true" data-toggle="tooltip" data-placement="left"
+                       title="Location"></i> &nbsp; <a class="fact-link" href="{{ page.maplink }}" target="_blank">{{ page.address }}</a>
+                </li>
+                <li class="list-group-item fact-item">
+                    <i class="fa fa-usd" data-toggle="tooltip" data-placement="left" title="Cost (Lowest)"></i> &nbsp;
+                    <a class="fact-link" href="http://housing.utexas.edu/future/prices-billing" target="_blank">{{ page.price }}/Long Session</a>
+                </li>
+                <li class="list-group-item fact-item">
+                    <i class="fa fa-users" data-toggle="tooltip" data-placement="left" title="Gender"></i> &nbsp; <span>{{ page.gender }}</span>
+                </li>
+                <li class="list-group-item fact-item">
+                    <i class="fa fa-cutlery" data-toggle="tooltip" data-placement="left"
+                       title="Nearest Dining Hall"></i> &nbsp; <span>{{ page.dining }}</span>
+                </li>
+                <li class="list-group-item fact-item">
+                    <i class="fa fa-external-link"></i> &nbsp; <a class="fact-link lower" href="{{ page.UTLink }}" target="_blank">UT Housing Description</a>
+                </li>
+            </ul>
+            <a class="btn btn-sm nav-btn" aria-label="home" href="/"><i class="fa fa-lg fa-home"></i>Home</a>
+            {% if page.prev-dorm %}
+            <a class="btn btn-sm nav-btn" aria-label="previous" href="/{{ page.prev-dorm }}"><i
+                    class="fa fa-lg fa-chevron-left"></i>{{ page.prev-dorm }}</a>
+            {% endif %}
+            {% if page.next-dorm %}
+            <a class="btn btn-sm nav-btn" aria-label="next" href="/{{ page.next-dorm }}"><i
+                    class="fa fa-lg fa-chevron-right"></i>{{ page.next-dorm | capitalize }}</a>
+            {% endif %}
+            <select name="dorm-dropdown" id="dorm-selector" class="selectpicker" data-live-search="true"
+                    title="Choose a Dorm" style="font-size: 1rem;">
+                {% for post in site.posts reversed %}
+                    <option>{{post.title}}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-  </div>
-  <div class="col-md-8 main">
-    <img src="{{ page.hero }}" class="img-responsive" alt="Andrews Dormitory">
-    <p class="post-meta">Photo Credit: <a href="http://www.dailytexanonline.com/author/junyuan-tan" target="_blank">Junyuan Tan</a></p>
-    <article class="post-content">
-      {{ content }}
-    </article>
-  </div>
+    </div>
+    <div class="col-md-8 main">
+        <img src="{{ page.hero }}" class="img-responsive" alt="Andrews Dormitory">
+        <p class="post-meta">Photo Credit: <a href="http://www.dailytexanonline.com/author/junyuan-tan" target="_blank">Junyuan
+            Tan</a></p>
+        <article class="post-content">
+            {{ content }}
+        </article>
+    </div>
 
 </div>
 

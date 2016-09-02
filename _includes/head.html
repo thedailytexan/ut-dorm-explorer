@@ -3,35 +3,34 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{% if page.title%}{{ page.title }} | {% endif %} UT-Austin Dorm Explorer | The Daily Texan</title>
-    <meta name="description" content="Not sure where to live on campus? Let our UT dorm explorer help you out!">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="/js/jquery-2.2.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/flexibility.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="canonical" href='{{ page.url | replace:"index.html","" | prepend: site.baseurl | prepend: site.url }}'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+
 
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+    <title>{% if page.title%}{{ page.title }} | {% endif %} UT-Austin Dorm Explorer | The Daily Texan</title>
+    <meta name="description" content="Not sure where to live on campus? Let our UT dorm explorer help you out!">
     <meta property="og:site_name" content="Daily Texan Features" />
     <meta property="og:title" content="UT-Austin Dorm Explorer" />
     <meta property="og:url" content="http://dailytexanonline.com/features/dorms" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Not sure where to live on campus? Let our UT dorm explorer help you out!" />
     <meta property="og:image" content="" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
-
 
 </head>

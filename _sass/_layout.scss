@@ -86,13 +86,108 @@
   }
 }
 
+// filter menu for homepage
+
+.filter-menu {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  margin-bottom: 1em;
+  padding: 0;
+
+  @include media-query($on-mobile) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.filter-selector {
+  display: flex;
+  border-right: 1px solid #ddd;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+
+  &:last-of-type {
+    border-right: 0;
+  }
+
+  @include media-query($on-palm) {
+    border-right: 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: auto;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+}
+
+.filter-trigger-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: .5em;
+
+  .button-reset {
+    margin-right: 1em;
+  }
+
+  @include media-query($on-palm) {
+    margin-bottom: 2em;
+  }
+}
+
+#filter-trigger {
+  i {
+    margin-right: .5em;
+  }
+
+  @include media-query($on-palm) {
+    width: 100%;
+  }
+}
+
+.fast-spin {
+  -webkit-animation: fa-spin .5s infinite linear;
+  animation: fa-spin .5s infinite linear;
+}
+
+.filter-information {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  img.filter-icon {
+    width: 30%;
+  }
+
+  p.filter-information-tag {
+    font-family: $header-font-family;
+    font-size: 2em;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+}
 /**
  * Site footer
  */
 .site-footer {
   border-top: 9px solid $grey-color-light;
   padding: 1em 0;
-  width: 77.5%;
+  width: 79.5%;
   margin: auto;
   margin-top: 1em;
   @include media-query($on-palm) {
@@ -245,6 +340,10 @@ img {
 
   @include media-query($on-laptop) {
     font-size: 4rem;
+  }
+  @include media-query($on-palm) {
+    text-align: left;
+    font-size: 6rem;
   }
 }
 

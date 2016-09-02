@@ -9,6 +9,7 @@ gender: Co-ed
 dining: Kinsolving, Littlefield Patio Cafe
 UTLink: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=117
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
+iframe: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.112140853462!2d-97.74265498487007!3d30.290869013844116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5826703dff1%3A0x6567d063f7a9f40d!2sWhitis+Court!5e0!3m2!1sen!2sus!4v1462319417884
 
 prev-dorm: san jacinto
 ---
@@ -48,10 +49,6 @@ Whitis Court has a unique story among UT’s 15 on campus dormitories. In 1999 t
 "Great! I just wish the walls were a little thicker, the microwave actually heated up food, the water pressure in the sink was higher, and the dryers actually worked."
 
 #####Name, year#####
-
----
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.112140853462!2d-97.74265498487007!3d30.290869013844116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5826703dff1%3A0x6567d063f7a9f40d!2sWhitis+Court!5e0!3m2!1sen!2sus!4v1462319417884" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 ---
 

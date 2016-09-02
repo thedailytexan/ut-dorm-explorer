@@ -9,6 +9,7 @@ gender: All-female
 dining: Kinsolving
 UTLink: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=116
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
+iframe: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.1292001809215!2d-97.74182028487012!3d30.290383313867196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b582f6343421%3A0xe616f20f52f36d5e!2sKinsolving+Residence+Hall!5e0!3m2!1sen!2sus!4v1462317713758
 
 next-dorm: littlefield
 prev-dorm: jester west
@@ -60,10 +61,6 @@ Kinsolving is one of two all female dorms on campus. It is the larger of the two
 "When you share a bathroom between rooms, sometimes several people will throw up in the toilet numerous times and you just gotta remember to clean the toilet after every Friday and Saturday."
 
 #####Kany, international relations freshman#####
-
----
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.1292001809215!2d-97.74182028487012!3d30.290383313867196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b582f6343421%3A0xe616f20f52f36d5e!2sKinsolving+Residence+Hall!5e0!3m2!1sen!2sus!4v1462317713758" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 ---
 

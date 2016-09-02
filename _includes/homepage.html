@@ -1,10 +1,50 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="homepageMapController" ng-init="renderHomepage()">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <div class="col-md-4 col-sm-4 col-lg-4">
+        <div class="filter-trigger-container" ng-controller="filterMenuController">
+            <button class="btn btn-primary"  id="filter-trigger" ng-click="trigger()">
+                <i id='filter-trigger-icon' class="fa fa-chevron-down"></i>
+                <span>Filters</span>
+            </button>
+            <button class="btn btn-default button-reset" ng-click="resetFilters()" ng-show="menuShow">
+                <i id="filter-reset-icon" class="fa fa-refresh"></i>
+                <span>Reset your filters</span>
+            </button>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4 list-container">
             <h3 class="list-header">Select a Dorm</h3>
             <div id='listings' class='listings'>
 
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-8 filter-menu" ng-controller="filterMenuController" ng-init="init()">
+            <div class="filter-selector">
+                <div class="filter-information">
+                    <img src="/assets/img/dt.png" alt="Price" class="img-circle filter-icon img-responsive">
+                    <p class="filter-information-tag">Price</p>
+                </div>
+                <select name="price_control" class="form-control" id="price-controller" ng-model="priceSelector.model">
+                    <option ng-value="option.value" ng-repeat="option in priceSelector.options" ng-click="filterOptionAction(option.value)">[[ option.label ]]</option>
+                </select>
+            </div>
+            <div class="filter-selector">
+                <div class="filter-information">
+                    <img src="/assets/img/dt.png" alt="Price" class="img-circle filter-icon img-responsive">
+                    <p class="filter-information-tag">Area</p>
+                </div>
+                <select name="area_control" class="form-control" id="area-controller" ng-model="areaSelector.model">
+                    <option ng-value="option.value" ng-repeat="option in areaSelector.options">[[ option.label ]]</option>
+                </select>
+            </div>
+            <div class="filter-selector">
+                <div class="filter-information">
+                    <img src="/assets/img/dt.png" alt="Gender" class="img-circle filter-icon img-responsive">
+                    <p class="filter-information-tag">Gender</p>
+                </div>
+                <select name="gender_control" class="form-control" id="gender-controller" ng-model="genderSelector.model">
+                    <option ng-value="option.value" ng-repeat="option in genderSelector.options" ng-click="filterOptionAction(option.value)">[[ option.label ]]</option>
+                </select>
             </div>
         </div>
         <div class="col-md-8 col-sm-8 col-lg-8 main-container">
