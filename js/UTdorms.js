@@ -4,7 +4,7 @@ var app = angular.module('housingApp', ['ngRoute'],
         $interpolateProvider.endSymbol(']]');
     });
 
-app.controller('homepageMapController', function ($scope) {
+app.controller('homepageController', function ($scope) {
     L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
     $scope.geoData = [
         {
@@ -621,35 +621,36 @@ app.controller('homepageMapController', function ($scope) {
         };
 
         L.control.layers(testFilter).addTo(map);
-
-        // TODO: redraw our list node based on filtered objects
-
     };
-});
+    /* --------------------------
 
-app.controller('filterMenuController', function ($scope) {
-    $scope.config = {
-        // configuration elements
+    FILTER CONTROLS -------------
+
+    ----------------------------- */
+
+    $scope.filterConfig = {
+        // filterConfiguration elements
         trigger: '#filter-trigger',
         icon: '#filter-trigger-icon',
         element: '.filter-menu',
         filter_selector_trigger: '',
         filter_option_trigger: ''
     };
-    $scope.init = function () {
+    // filter menu control
+    $scope.initializeFilters = function () {
         // hide the filter menu element
-        $($scope.config.element).hide();
+        $($scope.filterConfig.element).hide();
     };
     $scope.menuShow = false;
     $scope.trigger = function () {
-        if ($($scope.config.element).is(':hidden')) {
-            $($scope.config.icon).removeClass('fa-chevron-down').addClass('fa-close');
-            $($scope.config.element).slideDown(150);
-            //$('html, body').animate({scrollTop: $($scope.config.trigger).offset().top - 10}, 75);
+        if ($($scope.filterConfig.element).is(':hidden')) {
+            $($scope.filterConfig.icon).removeClass('fa-chevron-down').addClass('fa-close');
+            $($scope.filterConfig.element).slideDown(150);
+            //$('html, body').animate({scrollTop: $($scope.filterConfig.trigger).offset().top - 10}, 75);
             $scope.menuShow = true;
         } else {
-            $($scope.config.icon).removeClass('fa-close').addClass('fa-chevron-down');
-            $($scope.config.element).slideUp(100);
+            $($scope.filterConfig.icon).removeClass('fa-close').addClass('fa-chevron-down');
+            $($scope.filterConfig.element).slideUp(100);
             $scope.menuShow = false;
         }
     };
@@ -667,7 +668,10 @@ app.controller('filterMenuController', function ($scope) {
             { label: 'Jester Area', value: 'jester' },
             { label: 'Whitis Area', value: 'whitis' },
             { label: 'Other', value: 'other' }
-        ]
+        ],
+        onSelect: function() {
+
+        }
     };
     $scope.priceSelector = {
         model: null,
@@ -676,16 +680,26 @@ app.controller('filterMenuController', function ($scope) {
             { label: 'High to Low', value: 'descending' }
         ]
     };
-    $scope.filterOptionAction = function(val) {
-        if(val === 'male') {
-            console.log('yes');
-        }
-    };
     $scope.resetFilters = function () {
         $('#filter-reset-icon').addClass('fast-spin');
         setTimeout(function() {
             $('#filter-reset-icon').removeClass('fast-spin');
         }, 300);
-    }
+    };
+    // watchers
+    $scope.$watch('$scope.genderSelector.model', function(newVal, oldVal, scope) {
+        switch (newVal) {
+            case null: {
+
+                break;
+            }
+        }
+    });
+    $scope.$watch('$scope.areaSelector.model', function(selectedVal) {
+
+    });
+    $scope.$watch('$scope.priceSelector.model', function(selectedVal) {
+
+    });
 });
 

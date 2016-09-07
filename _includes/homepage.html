@@ -1,12 +1,12 @@
-<div class="container-fluid" ng-controller="homepageMapController" ng-init="renderHomepage()">
+<div class="container-fluid" ng-controller="homepageController">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <div class="filter-trigger-container" ng-controller="filterMenuController">
+        <div class="filter-trigger-container">
             <button class="btn btn-primary"  id="filter-trigger" ng-click="trigger()">
                 <i id='filter-trigger-icon' class="fa fa-chevron-down"></i>
                 <span>Filters</span>
             </button>
-            <button class="btn btn-default button-reset" ng-click="resetFilters()" ng-show="menuShow">
+            <button class="btn btn-default button-reset" ng-click="resetFilters()" ng-show="menuShow" data-ng-click="genderSelector.model = '' ">
                 <i id="filter-reset-icon" class="fa fa-refresh"></i>
                 <span>Reset your filters</span>
             </button>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="col-md-4"></div>
-        <div class="col-md-8 filter-menu" ng-controller="filterMenuController" ng-init="init()">
+        <div class="col-md-8 filter-menu" ng-init="initializeFilters()">
             <div class="filter-selector">
                 <div class="filter-information">
                     <img src="/assets/img/dt.png" alt="Price" class="img-circle filter-icon img-responsive">
