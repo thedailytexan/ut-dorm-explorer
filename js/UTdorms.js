@@ -4,7 +4,29 @@ var app = angular.module('housingApp', ['ngRoute'],
         $interpolateProvider.endSymbol(']]');
     });
 
+app.directive('mapbox', [
+    function() {
+        return {
+            restrict: 'EA',
+            replace: true,
+            scope: {
+                map_callback: '='
+            },
+            template: '<div id="homepage-map"></div>',
+            link: function(scope, elem, attr) {
+                L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
+                var map = mapbox.map(elem[0], 'mapbox.streets');
+                scope.map_callback(map);
+            }
+        }
+    }
+]);
+
 app.controller('homepageController', function ($scope) {
+    $scope.callback = function (map) {
+        map.setView([51.433333, 5.483333], 12);
+    };
+    /*
     L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
     $scope.geoData = [
         {
@@ -622,6 +644,7 @@ app.controller('homepageController', function ($scope) {
 
         L.control.layers(testFilter).addTo(map);
     };
+    */
     /* --------------------------
 
     FILTER CONTROLS -------------

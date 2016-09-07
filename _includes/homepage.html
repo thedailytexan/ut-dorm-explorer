@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="homepageController">
+<div class="container-fluid" ng-controller="homepageController" ng-init="renderHomepage()">
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="filter-trigger-container">
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="col-md-8 col-sm-8 col-lg-8 main-container">
-            <div id="homepage-map" style="background: none;"></div>
+            <mapbox callback="map_callback"></mapbox>
         </div>
     </div>
     <div class="col-md-1"></div>
