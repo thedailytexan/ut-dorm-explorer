@@ -1,11 +1,10 @@
-var app = angular.module('housingApp', ['ngRoute'],
+var app = angular.module('housingApp', ['ngRoute', 'leaflet-directive'],
     function ($interpolateProvider) {
         $interpolateProvider.startSymbol('[[');
         $interpolateProvider.endSymbol(']]');
     });
 
 app.controller('homepageController', function ($scope) {
-    L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
     $scope.geoData = [
         {
             "type": "FeatureCollection",
@@ -509,7 +508,22 @@ app.controller('homepageController', function ($scope) {
         }
     ];
 
-    $scope.renderHomepage = function () {
+    angular.extend($scope, {
+        defaults: {
+            scrollWheelZoom: false,
+            geojson: {
+                data: $scope.geoData
+            }
+        }
+    });
+
+    //L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
+
+    $scope.renderHomepage = function() {
+
+    };
+
+    /* $scope.renderHomepage = function () {
         // defines our map bounds
         var southWest = L.latLng(30.293, -97.732),
             northEast = L.latLng(30.281, -97.743),
@@ -621,7 +635,7 @@ app.controller('homepageController', function ($scope) {
         };
 
         L.control.layers(testFilter).addTo(map);
-    };
+    }; */
     /* --------------------------
 
     FILTER CONTROLS -------------
