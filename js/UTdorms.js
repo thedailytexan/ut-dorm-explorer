@@ -5,29 +5,34 @@ var app = angular.module('housingApp', ['ngRoute'],
     });
 
 app.directive('mapbox', [
-    function() {
+    function () {
         return {
             restrict: 'EA',
             replace: true,
             scope: {
-                map_callback: '='
+                callback: "="
             },
             template: '<div id="homepage-map"></div>',
-            link: function(scope, elem, attr) {
+            link: function (scope, elem) {
+                // build the map here
                 L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
-                var map = mapbox.map(elem[0], 'mapbox.streets');
-                scope.map_callback(map);
+                var southWest = L.latLng(30.293, -97.732),
+                    northEast = L.latLng(30.281, -97.743),
+                    bounds = L.latLngBounds(southWest, northEast);
+                var map = L.mapbox.map(elem[0], 'mapbox.streets',
+                    {
+                        maxBounds: bounds,
+                        minZoom: 14
+                    }
+                ).setView([30.287, -97.738], 16).fitBounds(bounds);
+
+                scope.callback(map);
             }
-        }
+        };
     }
 ]);
 
 app.controller('homepageController', function ($scope) {
-    $scope.callback = function (map) {
-        map.setView([51.433333, 5.483333], 12);
-    };
-    /*
-    L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
     $scope.geoData = [
         {
             "type": "FeatureCollection",
@@ -530,22 +535,7 @@ app.controller('homepageController', function ($scope) {
             ]
         }
     ];
-
-    $scope.renderHomepage = function () {
-        // defines our map bounds
-        var southWest = L.latLng(30.293, -97.732),
-            northEast = L.latLng(30.281, -97.743),
-            bounds = L.latLngBounds(southWest, northEast);
-
-        // init the map object
-        var map = L.mapbox.map('homepage-map', 'mapbox.streets', {
-                maxBounds: bounds,
-                minZoom: 14
-            })
-            .setView([30.287, -97.738], 16)
-            .fitBounds(bounds);
-
-        // start the markup injection
+    $scope.buildMap = function(map) {
         var listings = document.getElementById('listings');
         var locations = L.mapbox.featureLayer().addTo(map);
         locations.setGeoJSON($scope.geoData); // add our dorm data to the map
@@ -644,7 +634,7 @@ app.controller('homepageController', function ($scope) {
 
         L.control.layers(testFilter).addTo(map);
     };
-    */
+
     /* --------------------------
 
     FILTER CONTROLS -------------
