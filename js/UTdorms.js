@@ -7,7 +7,7 @@ var app = angular.module('housingApp', ['ngRoute'],
 app.directive('mapbox', [
     function () {
         return {
-            restrict: 'EA',
+            restrict: 'E',
             replace: true,
             scope: {
                 callback: "="
@@ -535,6 +535,13 @@ app.controller('homepageController', function ($scope) {
             ]
         }
     ];
+
+    $scope.selectedFilters = {
+        price: '',
+        area: '',
+        gender: ''
+    };
+
     $scope.buildMap = function(map) {
         var listings = document.getElementById('listings');
         var locations = L.mapbox.featureLayer().addTo(map);
@@ -552,11 +559,6 @@ app.controller('homepageController', function ($scope) {
             el.className += ' active';
         }
 
-        // start building our list
-        var main_dorm_list = [];
-        var coed_list = [];
-        var female_list = [];
-        var male_list = [];
         locations.eachLayer(function (locale) {
             var prop = locale.feature.properties;
             var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>"; // add popups
@@ -587,26 +589,6 @@ app.controller('homepageController', function ($scope) {
                 setActive(listing);
             });
             locale.bindPopup(popup); // bind the popup to the map
-            main_dorm_list.push(locale); // push this into our layerGroup
-
-            // begin our filtering process
-            if (prop.gender) {
-                switch (prop.gender) {
-                    case 'coed': {
-                        coed_list.push(locale);
-                        break;
-                    }
-                    case 'female': {
-                        female_list.push(locale);
-                        break;
-                    }
-                    case 'male': {
-                        male_list.push(locale);
-                        break;
-                    }
-                }
-            }
-            //TODO stop building 3 separate lists and figure out how to properly filter
         });
         // what happens when we click an attraction in the map
         attractions.eachLayer(function (layer) {
@@ -614,25 +596,34 @@ app.controller('homepageController', function ($scope) {
             var attraction_popup = '<span>' + prop.name + '</span>';
             layer.bindPopup(attraction_popup);
         });
-        // an ungodly mess
-        var main_dorm_collection = L.layerGroup(main_dorm_list);
-        console.log(main_dorm_collection); //dorm_collection.layers.31-48.feature.properties.gender
-        // gender based layer collections
-        var coed_collection = L.layerGroup(coed_list);
-        console.log(coed_collection);
-        var female_collection = L.layerGroup(female_list);
-        console.log(female_collection);
-        var male_collection = L.layerGroup(male_list);
-        console.log(male_collection);
 
-        var testFilter = {
-            "Dorms": main_dorm_collection,
-            "Co-ed": coed_collection,
-            "Female": female_collection,
-            "Male": male_collection
+
+
+        $scope.filterSelectorAction = function(filter, value) {
+            $scope.selectedFilters[filter] = value;
+            locations.setFilter(function (f) {
+                return f.properties[filter] === value;
+            });
+            return false;
         };
 
-        L.control.layers(testFilter).addTo(map);
+        $scope.resetFilters = function () {
+            $('#filter-reset-icon').addClass('fast-spin');
+            setTimeout(function() {
+                $('#filter-reset-icon').removeClass('fast-spin');
+            }, 300);
+            $scope.selectedFilters.price = '';
+            $scope.selectedFilters.area = '';
+            $scope.selectedFilters.gender = '';
+            $('.radio-filter-selector').each(function(){
+                if($(this).is(':checked')) {
+                    $(this).removeAttr('checked');
+                }
+            });
+            locations.setFilter(function() {
+                return true;
+            })
+        };
     };
 
     /* --------------------------
@@ -667,52 +658,5 @@ app.controller('homepageController', function ($scope) {
             $scope.menuShow = false;
         }
     };
-    $scope.genderSelector = {
-        model: null,
-        options: [
-            { label: 'Co-Ed', value: 'coed' },
-            { label: 'Male-Only', value: 'male' },
-            { label: 'Female-Only', value: 'female' }
-        ]
-    };
-    $scope.areaSelector = {
-        model: null,
-        options: [
-            { label: 'Jester Area', value: 'jester' },
-            { label: 'Whitis Area', value: 'whitis' },
-            { label: 'Other', value: 'other' }
-        ],
-        onSelect: function() {
-
-        }
-    };
-    $scope.priceSelector = {
-        model: null,
-        options: [
-            { label: 'Low to High', value: 'ascending' },
-            { label: 'High to Low', value: 'descending' }
-        ]
-    };
-    $scope.resetFilters = function () {
-        $('#filter-reset-icon').addClass('fast-spin');
-        setTimeout(function() {
-            $('#filter-reset-icon').removeClass('fast-spin');
-        }, 300);
-    };
-    // watchers
-    $scope.$watch('$scope.genderSelector.model', function(newVal, oldVal, scope) {
-        switch (newVal) {
-            case null: {
-
-                break;
-            }
-        }
-    });
-    $scope.$watch('$scope.areaSelector.model', function(selectedVal) {
-
-    });
-    $scope.$watch('$scope.priceSelector.model', function(selectedVal) {
-
-    });
 });
 
