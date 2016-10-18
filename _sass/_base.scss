@@ -186,10 +186,7 @@ pre {
   border-bottom: 12px solid $brand-color;
   padding: 2em 10em;
   margin-bottom: .6em;
-  @include media-query($on-palm) {
-    width: 88%;
-    border-bottom-width: 6px;
-  }
+
   @include media-query($on-mobile){
     padding: 0;
     width: 100%;
@@ -201,8 +198,7 @@ pre {
   }
 
   @include media-query($on-palm) {
-    margin-top: 1rem;
-    padding: 1em;
+    padding: 1.25em;
   }
 
 }
@@ -234,6 +230,10 @@ pre {
   &:hover {
     color: #fff;
     text-decoration-color: #fff;
+  }
+
+  @include media-query($on-mobile) {
+    font-size: 2rem;
   }
 }
 
@@ -320,6 +320,7 @@ pre {
 }
 
 .dorm-container {
+  margin-top: 2em;
   @include media-query($on-mobile){
     padding: 0;
   }
@@ -339,6 +340,7 @@ pre {
 }
 
 div.facts-container {
+  padding-right: 1.5em;
   @include media-query($on-palm){
     margin-bottom: 5em;
     width: 100%;

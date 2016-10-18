@@ -152,7 +152,7 @@ app.controller('homepageController', function ($scope) {
                         "link": "creekside",
                         "name": "Creekside",
                         "address": "2500 San Jacinto Blvd",
-                        "area": 'whitis',
+                        "area": 'creekside',
                         'gender': 'male',
                         'price': 10223,
                         //walking directions
@@ -579,6 +579,13 @@ app.controller('homepageController', function ($scope) {
             // what happens when we click the location icon in the list
             direct_link.onclick = function () {
                 setActive(listing);
+                if(window.innerWidth < 767) {
+                    // mobile specific click events
+                    $('html, body').animate({
+                        scrollTop: $('.main-container').offset().top - 18
+                    }, 750);
+                }
+                setActive(listing);
                 map.setView(locale.getLatLng(), 18);
                 locale.openPopup();
                 return false;
@@ -597,9 +604,20 @@ app.controller('homepageController', function ($scope) {
             layer.bindPopup(attraction_popup);
         });
 
-
+        // certain filter actions have to be within buildMap() because they access variables inside this scope
 
         $scope.filterSelectorAction = function(filter, value) {
+            if(filter === 'price') {
+                switch (value) {
+                    case 'ascending':
+                        // TODO: place code for ascending list builder here
+                        break;
+                    case 'descending':
+                        // TODO: build descending list builder here
+                        break;
+                }
+            }
+            //TODO: figure out how to filter multiple values at once
             $scope.selectedFilters[filter] = value;
             locations.setFilter(function (f) {
                 return f.properties[filter] === value;
@@ -650,7 +668,9 @@ app.controller('homepageController', function ($scope) {
         if ($($scope.filterConfig.element).is(':hidden')) {
             $($scope.filterConfig.icon).removeClass('fa-chevron-down').addClass('fa-close');
             $($scope.filterConfig.element).slideDown(150);
-            //$('html, body').animate({scrollTop: $($scope.filterConfig.trigger).offset().top - 10}, 75);
+            if(window.innerWidth < 767) {
+                $('html, body').animate({scrollTop: $($scope.filterConfig.element).offset().top - 10}, 500);
+            }
             $scope.menuShow = true;
         } else {
             $($scope.filterConfig.icon).removeClass('fa-close').addClass('fa-chevron-down');
