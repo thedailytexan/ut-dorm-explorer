@@ -117,10 +117,10 @@
   display: flex;
   border-right: 1px solid #ddd;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  align-content: flex-start;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 3rem 1.5rem;
   width: 33%;
 
   &:last-of-type {
