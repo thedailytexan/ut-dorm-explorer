@@ -43,9 +43,12 @@ app.controller('homepageController', function ($scope) {
                     "type": "Feature",
                     "properties": {
                         //geojson markers
-                        "marker-color": "#cc5527",
-                        "marker-size": "medium",
-                        "marker-symbol": "building",
+                        "stroke": "#333F48",
+                        "stroke-width": 2,
+                        "stroke-opacity": 1,
+                        "fill": "#BF5700",
+                        "fill-opacity": 0.5,
+
                         //details
                         "name": "Andrews",
                         "address": "2401 Whitis Avenue",
@@ -60,10 +63,38 @@ app.controller('homepageController', function ($scope) {
                         'walk_to_stadium': 15
                     },
                     "geometry": {
-                        "type": "Point",
+                        "type": "Polygon",
                         "coordinates": [
-                            -97.73982524871825,
-                            30.288177779561856
+                          [
+                            [
+                              -97.7401551604271,
+                              30.288068923435727
+                            ],
+                            [
+                              -97.74013370275497,
+                              30.28826347472509
+                            ],
+                            [
+                              -97.73954898118973,
+                              30.288221785195557
+                            ],
+                            [
+                              -97.73955702781677,
+                              30.288094400412238
+                            ],
+                            [
+                              -97.74003714323044,
+                              30.288129141733204
+                            ],
+                            [
+                              -97.74004250764847,
+                              30.288061975168258
+                            ],
+                            [
+                              -97.7401551604271,
+                              30.288068923435727
+                            ]
+                          ]
                         ]
                     }
                 },
