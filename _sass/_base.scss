@@ -362,12 +362,7 @@ div.main-container {
 }
 
 div.list-container {
-  height: 70vh;
   padding: 0;
-
-  @include media-query($sm) {
-    //FIXME responsive issue
-  }
 }
 
 .list-facts {

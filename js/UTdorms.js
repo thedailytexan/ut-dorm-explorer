@@ -27,8 +27,6 @@ app.directive('mapbox', [
                 ).setView([30.287, -97.738], 16).fitBounds(bounds);
 
                 scope.callback(map);
-
-                return map;
             }
         };
     }
@@ -186,7 +184,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "Creekside",
                         "address": "2500 San Jacinto Blvd",
                         "area": 'creekside',
-                        'gender': 'men',
+                        'gender': 'male',
                         'price': 10223,
                         //walking directions
                         'walk_to_greg': 10,
@@ -237,7 +235,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "Jester East",
                         "link": "jester%20east",
                         "address": "201 East 21st Street",
-                        "area": 'jester',
+                        "area": 'whitis',
                         'gender': 'coed',
                         'price': 10223,
                         //walking directions
@@ -263,7 +261,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "Jester West",
                         "link": "jester%20west",
                         "address": "201 East 21st Street",
-                        "area": 'jester',
+                        "area": 'whitis',
                         'gender': 'coed',
                         'price': 10223,
                         //walking directions
@@ -341,7 +339,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "Moore-Hill",
                         "link": "moore-hill",
                         "address": "304 East 21st Street",
-                        "area": 'jester',
+                        "area": 'whitis',
                         'gender': 'coed',
                         'price': 10223,
                         //walking directions
@@ -367,7 +365,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "Prather",
                         "link": "prather",
                         "address": "305 East 21st Street",
-                        "area": 'jester',
+                        "area": 'whitis',
                         'gender': 'coed',
                         'price': 10223,
                         //walking directions
@@ -393,7 +391,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "Roberts",
                         "link": "roberts",
                         "address": "303 East 21st Street",
-                        "area": 'jester',
+                        "area": 'whitis',
                         'gender': 'coed',
                         'price': 10223,
                         //walking directions
@@ -419,7 +417,7 @@ app.controller('homepageController', function ($scope) {
                         "name": "San Jacinto",
                         "link": "san%20jacinto",
                         "address": "309 East 21st Street",
-                        "area": 'jester',
+                        "area": 'whitis',
                         'gender': 'coed',
                         'price': 10223,
                         //walking directions
@@ -575,26 +573,12 @@ app.controller('homepageController', function ($scope) {
         gender: ''
     };
 
-    $scope.buildMap = function (map, filter) {
+    $scope.buildMap = function(map) {
         var listings = document.getElementById('listings');
-        var locations = false;
-        var locationGroup = false;
-
-        //FIXME clear location groups before rendering map
-
-        if (filter) {
-            locationGroup = L.layerGroup().addTo(map);
-            locations = L.mapbox.featureLayer().addTo(locationGroup);
-            locations.setGeoJSON(filter); // add our dorm data to the map
-        } else {
-            locationGroup = L.layerGroup().addTo(map);
-            locations = L.mapbox.featureLayer().addTo(locationGroup);
-            locations.setGeoJSON($scope.geoData); // add our dorm data to the map
-            var attractions = L.mapbox.featureLayer().addTo(map); // add our attractions data to the map
-            attractions.setGeoJSON($scope.geoJSON_attractions);
-        }
-
-        buildList();
+        var locations = L.mapbox.featureLayer().addTo(map);
+        locations.setGeoJSON($scope.geoData); // add our dorm data to the map
+        var attractions = L.mapbox.featureLayer().addTo(map); // add our attractions data to the map
+        attractions.setGeoJSON($scope.geoJSON_attractions);
 
         // determine which dorm is the active one selected by the user
         function setActive(el) {
@@ -606,6 +590,44 @@ app.controller('homepageController', function ($scope) {
             el.className += ' active';
         }
 
+        locations.eachLayer(function (locale) {
+            var prop = locale.feature.properties;
+            var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>"; // add popups
+
+            var listing = listings.appendChild(document.createElement('div'));
+            listing.className = 'list-item';
+
+            var link = listing.appendChild(document.createElement('a'));
+            link.href = '/' + prop.link;
+            link.className = 'title';
+            link.innerHTML = prop.name;
+
+            var direct_link = listing.appendChild(document.createElement('a'));
+            direct_link.href = '#';
+            direct_link.className = 'direct-link';
+            direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
+
+            // what happens when we click the location icon in the list
+            direct_link.onclick = function () {
+                setActive(listing);
+                if(window.innerWidth < 767) {
+                    // mobile specific click events
+                    $('html, body').animate({
+                        scrollTop: $('.main-container').offset().top - 18
+                    }, 750);
+                }
+                setActive(listing);
+                map.setView(locale.getLatLng(), 18);
+                locale.openPopup();
+                return false;
+            };
+            // what happens when we click a dorm on the list
+            locale.on('click', function (e) {
+                map.setView(locale.getLatLng(), 18);
+                setActive(listing);
+            });
+            locale.bindPopup(popup); // bind the popup to the map
+        });
         // what happens when we click an attraction in the map
         attractions.eachLayer(function (layer) {
             var prop = layer.feature.properties;
@@ -613,112 +635,51 @@ app.controller('homepageController', function ($scope) {
             layer.bindPopup(attraction_popup);
         });
 
-        function buildList() {
-            if ($('.listings').children()) {
-                $('.listings').empty();
-            }
-            locations.eachLayer(function (locale) {
-                var prop = locale.feature.properties;
-                var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>"; // add popups
-
-                var listing = listings.appendChild(document.createElement('div'));
-                listing.className = 'list-item';
-
-                var link = listing.appendChild(document.createElement('a'));
-                link.href = '/' + prop.link;
-                link.className = 'title';
-                link.innerHTML = prop.name;
-
-                var direct_link = listing.appendChild(document.createElement('a'));
-                direct_link.href = '#';
-                direct_link.className = 'direct-link';
-                direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
-
-                // what happens when we click the location icon in the list
-                direct_link.onclick = function () {
-                    setActive(listing);
-                    if (window.innerWidth < 767) {
-                        // mobile specific click events
-                        $('html, body').animate({
-                            scrollTop: $('.main-container').offset().top - 18
-                        }, 750);
-                    }
-                    setActive(listing);
-                    map.setView(locale.getLatLng(), 18);
-                    locale.openPopup();
-                    return false;
-                };
-                // what happens when we click a dorm on the list
-                locale.on('click', function (e) {
-                    map.setView(locale.getLatLng(), 18);
-                    setActive(listing);
-                });
-                locale.bindPopup(popup); // bind the popup to the map
-            });
-        }
-
         // certain filter actions have to be within buildMap() because they access variables inside this scope
 
-        $scope.filterSelectorAction = function (filter, value) {
-            var list = $scope.geoData[0].features,
-                opts = {
-                    keys: ['properties.' + filter],
-                    shouldSort: true,
-                    location: 0,
-                    distance: 100,
-                    threshold: .25
-                },
-                fuse = new Fuse(list, opts),
-                result = fuse.search(value);
-
+        $scope.filterSelectorAction = function(filter, value) {
+            if(filter === 'price') {
+                switch (value) {
+                    case 'ascending':
+                        // TODO: place code for ascending list builder here
+                        break;
+                    case 'descending':
+                        // TODO: build descending list builder here
+                        break;
+                }
+            }
+            //TODO: figure out how to filter multiple values at once
             $scope.selectedFilters[filter] = value;
             locations.setFilter(function (f) {
-                $scope.buildMap(map, result);
                 return f.properties[filter] === value;
             });
-
-
-            /* if(filter === 'price') {
-             switch (value) {
-             case 'ascending':
-             // TODO: place code for ascending list builder here
-             break;
-             case 'descending':
-             // TODO: build descending list builder here
-             break;
-             }
-             } */
-            //TODO: figure out how to filter multiple values at once
-
             return false;
         };
 
         $scope.resetFilters = function () {
             $('#filter-reset-icon').addClass('fast-spin');
-            setTimeout(function () {
+            setTimeout(function() {
                 $('#filter-reset-icon').removeClass('fast-spin');
             }, 300);
             $scope.selectedFilters.price = '';
             $scope.selectedFilters.area = '';
             $scope.selectedFilters.gender = '';
-            $('.radio-filter-selector').each(function () {
-                if ($(this).is(':checked')) {
+            $('.radio-filter-selector').each(function(){
+                if($(this).is(':checked')) {
                     $(this).removeAttr('checked');
                 }
             });
-            locations.setFilter(function () {
+            locations.setFilter(function() {
                 return true;
-            });
-
-            $scope.buildMap(map);
+            })
         };
     };
 
     /* --------------------------
 
-     FILTER CONTROLS -------------
+    FILTER CONTROLS -------------
 
-     ----------------------------- */
+    ----------------------------- */
 
     $scope.filterConfig = {
         // filterConfiguration elements
@@ -738,7 +699,7 @@ app.controller('homepageController', function ($scope) {
         if ($($scope.filterConfig.element).is(':hidden')) {
             $($scope.filterConfig.icon).removeClass('fa-chevron-down').addClass('fa-close');
             $($scope.filterConfig.element).slideDown(150);
-            if (window.innerWidth < 767) {
+            if(window.innerWidth < 767) {
                 $('html, body').animate({scrollTop: $($scope.filterConfig.element).offset().top - 10}, 500);
             }
             $scope.menuShow = true;
