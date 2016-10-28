@@ -365,7 +365,7 @@ div.list-container {
   height: 70vh;
   padding: 0;
 
-  @include media-query($sm) {
+  @include media-query($on-mobile) {
     //FIXME responsive issue
   }
 }
