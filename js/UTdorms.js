@@ -4,6 +4,8 @@ var app = angular.module('housingApp', ['ngRoute'],
         $interpolateProvider.endSymbol(']]');
     });
 
+//TODO migrate to mapbox GL https://www.mapbox.com/help/building-a-store-locator/
+
 app.directive('mapbox', [
     function () {
         return {
