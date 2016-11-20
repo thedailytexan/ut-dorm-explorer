@@ -1,6 +1,5 @@
-<div class="container-fluid" ng-controller="homepageController">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+<div class="container-fluid homepage-main-container" ng-controller="homepageController">
+    <div class="col-md-12">
         <div class="filter-trigger-container">
             <button class="btn btn-primary"  id="filter-trigger" ng-click="trigger()">
                 <i id='filter-trigger-icon' class="fa fa-chevron-down"></i>
@@ -11,45 +10,90 @@
                 <span>Reset your filters</span>
             </button>
         </div>
-        <div class="col-md-4 col-sm-4 col-lg-4 list-container">
+        <div class="col-md-3 col-sm-3 col-lg-3 list-container">
             <h3 class="list-header">Select a Dorm</h3>
             <div id='listings' class='listings'>
 
             </div>
         </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-8 filter-menu" ng-init="initializeFilters()">
+        <div class="col-md-3"></div>
+        <div class="col-md-9 filter-menu" ng-init="initializeFilters()">
             <div class="filter-selector">
                 <div class="filter-information">
-                    <img src="/assets/img/dt.png" alt="Price" class="img-circle filter-icon img-responsive">
+                    <img src="/assets/img/price.png" alt="Price" class="img-circle filter-icon img-responsive">
                     <p class="filter-information-tag">Price</p>
                 </div>
-                <select name="price_control" class="form-control" id="price-controller" ng-model="priceSelector.model">
-                    <option ng-value="option.value" ng-repeat="option in priceSelector.options" ng-click="filterOptionAction(option.value)">[[ option.label ]]</option>
-                </select>
+                <div class="filter-select-radio">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="price-ascending" value="ascending" ng-click="filterSelectorAction('price', 'ascending')">
+                            Low to High
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="price-descending" value="descending" ng-click="filterSelectorAction('price', 'descending')">
+                            High to Low
+                        </label>
+                    </div>
+                </div>
+                <p class="disclaimer">* Pricing depends on room/bathroom options. Filtering by lowest price available.</p>
             </div>
             <div class="filter-selector">
                 <div class="filter-information">
-                    <img src="/assets/img/dt.png" alt="Price" class="img-circle filter-icon img-responsive">
+                    <img src="/assets/img/area.png" alt="Price" class="img-circle filter-icon img-responsive">
                     <p class="filter-information-tag">Area</p>
                 </div>
-                <select name="area_control" class="form-control" id="area-controller" ng-model="areaSelector.model">
-                    <option ng-value="option.value" ng-repeat="option in areaSelector.options">[[ option.label ]]</option>
-                </select>
+                <div class="filter-select-radio">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="creekside-area" value="creekside" ng-click="filterSelectorAction('area', 'creekside')">
+                            Creekside Area
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="jester-area" value="jester" ng-click="filterSelectorAction('area', 'jester')">
+                            Jester Area
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="whitis-area" value="whitis" ng-click="filterSelectorAction('area', 'whitis')">
+                            Whitis Area
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="filter-selector">
                 <div class="filter-information">
-                    <img src="/assets/img/dt.png" alt="Gender" class="img-circle filter-icon img-responsive">
+                    <img src="/assets/img/gender.png" alt="Gender" class="img-circle filter-icon img-responsive">
                     <p class="filter-information-tag">Gender</p>
                 </div>
-                <select name="gender_control" class="form-control" id="gender-controller" ng-model="genderSelector.model">
-                    <option ng-value="option.value" ng-repeat="option in genderSelector.options" ng-click="filterOptionAction(option.value)">[[ option.label ]]</option>
-                </select>
+                <div class="filter-select-radio">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="coed" value="coed" ng-click="filterSelectorAction('gender', 'coed')">
+                            Co-ed
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="male-only" value="male" ng-click="filterSelectorAction('gender', 'men')">
+                            Male-only
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selector" class="radio-filter-selector" id="female-only" value="female" ng-click="filterSelectorAction('gender', 'female')">
+                            Female-only
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-8 col-sm-8 col-lg-8 main-container">
-            <div id="homepage-map" style="background: none;"></div>
+        <div class="col-md-9 col-sm-9 col-lg-9 main-container">
+            <mapbox callback="buildMap"></mapbox>
         </div>
     </div>
-    <div class="col-md-1"></div>
 </div>
