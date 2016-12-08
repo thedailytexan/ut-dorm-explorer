@@ -1,99 +1,18 @@
 <div class="container-fluid homepage-main-container" ng-controller="homepageController">
     <div class="col-md-12">
-        <div class="filter-trigger-container">
-            <button class="btn btn-primary"  id="filter-trigger" ng-click="trigger()">
-                <i id='filter-trigger-icon' class="fa fa-chevron-down"></i>
-                <span>Filters</span>
-            </button>
-            <button class="btn btn-default button-reset" ng-click="resetFilters()" ng-show="menuShow" data-ng-click="genderSelector.model = '' ">
-                <i id="filter-reset-icon" class="fa fa-refresh"></i>
-                <span>Reset your filters</span>
-            </button>
-        </div>
-        <div class="col-md-3 col-sm-3 col-lg-3 list-container">
-            <h3 class="list-header">Select a Dorm</h3>
-            <div id='listings' class='listings'>
+        {% comment %}
+            {% include filter.html %}
+        {% endcomment %}
+    </div>
+</div>
 
-            </div>
-        </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-9 filter-menu" ng-init="initializeFilters()">
-            <div class="filter-selector">
-                <div class="filter-information">
-                    <img src="/assets/img/price.png" alt="Price" class="img-circle filter-icon img-responsive">
-                    <p class="filter-information-tag">Price</p>
-                </div>
-                <div class="filter-select-radio">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="price-ascending" value="ascending" ng-click="filterSelectorAction('price', 'ascending')">
-                            Low to High
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="price-descending" value="descending" ng-click="filterSelectorAction('price', 'descending')">
-                            High to Low
-                        </label>
-                    </div>
-                </div>
-                <p class="disclaimer">* Pricing depends on room/bathroom options. Filtering by lowest price available.</p>
-            </div>
-            <div class="filter-selector">
-                <div class="filter-information">
-                    <img src="/assets/img/area.png" alt="Price" class="img-circle filter-icon img-responsive">
-                    <p class="filter-information-tag">Area</p>
-                </div>
-                <div class="filter-select-radio">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="creekside-area" value="creekside" ng-click="filterSelectorAction('area', 'creekside')">
-                            Creekside Area
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="jester-area" value="jester" ng-click="filterSelectorAction('area', 'jester')">
-                            Jester Area
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="whitis-area" value="whitis" ng-click="filterSelectorAction('area', 'whitis')">
-                            Whitis Area
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-selector">
-                <div class="filter-information">
-                    <img src="/assets/img/gender.png" alt="Gender" class="img-circle filter-icon img-responsive">
-                    <p class="filter-information-tag">Gender</p>
-                </div>
-                <div class="filter-select-radio">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="coed" value="coed" ng-click="filterSelectorAction('gender', 'coed')">
-                            Co-ed
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="male-only" value="male" ng-click="filterSelectorAction('gender', 'men')">
-                            Male-only
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="selector" class="radio-filter-selector" id="female-only" value="female" ng-click="filterSelectorAction('gender', 'female')">
-                            Female-only
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9 col-sm-9 col-lg-9 main-container">
-            <mapbox callback="buildMap"></mapbox>
+<div ng-controller="homepageController"> <!-- TODO split apart controllers -->
+    <div class="homepage--listings">
+        <h2 class="homepage--listings__header">Residence Halls Explorer</h2>
+        <p class="homepage--listings__copy">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+        <div id='listings' class='listings'>
+
         </div>
     </div>
+    <mapbox id="main-map" callback="buildMap"></mapbox>
 </div>

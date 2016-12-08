@@ -1,0 +1,45 @@
+.navbar {
+  border: 0 !important;
+  border-radius: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em .5em 0 .5em;
+  width: 100%;
+  z-index: 5000;
+}
+
+.navbar--content__navigation {
+  justify-content: flex-start;
+  flex: .5;
+  font-weight: bold;
+  padding-left: 2em;
+  
+  .navbar--content__brand {
+    color: #fff;
+    font-family: $mono-font-family;
+    font-size: 1.25em;
+  }
+
+  .navbar--content__home {
+    color: #fff;
+    font-family: $base-font-family;
+    font-size: 1em;
+    margin-left: .5em;
+  }
+}
+
+.navbar--content__share {
+  color: #fff;
+  align-items: baseline;
+  justify-content: flex-end;
+  flex: .5;
+  padding-right: 2em;
+
+  .navbar--content__facebook, .navbar--content__twitter {
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 2em;
+  }
+
+}

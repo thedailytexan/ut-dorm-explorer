@@ -14,19 +14,22 @@ app.directive('mapbox', [
             scope: {
                 callback: "="
             },
-            template: '<div id="homepage-map"></div>',
+            template: '<div id="main-map"></div>',
             link: function (scope, elem) {
                 // build the map here
-                L.mapbox.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
-                var southWest = L.latLng(30.293, -97.732),
+                mapboxgl.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
+                /*var southWest = L.latLng(30.293, -97.732),
                     northEast = L.latLng(30.281, -97.743),
-                    bounds = L.latLngBounds(southWest, northEast);
-                var map = L.mapbox.map(elem[0], 'mapbox.streets',
-                    {
-                        maxBounds: bounds,
-                        minZoom: 14
-                    }
-                ).setView([30.287, -97.738], 16).fitBounds(bounds);
+                    bounds = L.latLngBounds(southWest, northEast);*/
+
+                var map = new mapboxgl.Map({
+                    container: elem[0],
+                    style: 'mapbox://styles/scif/civr8g5vj005n2jm9n9r6r593',
+                    center: [-97.738, 30.287],
+                    minZoom: 15
+                });
+
+                // TODO bounding
 
                 scope.callback(map);
 
@@ -37,7 +40,7 @@ app.directive('mapbox', [
 ]);
 
 app.controller('homepageController', function ($scope) {
-    $scope.geoData = [
+    $scope.geoData =
         {
             "type": "FeatureCollection",
             "features": [
@@ -49,18 +52,16 @@ app.controller('homepageController', function ($scope) {
                         "stroke-opacity": 1,
                         "fill": "#BF5700",
                         "fill-opacity": 0.5,
-                        //details
                         "name": "Andrews",
                         "address": "2401 Whitis Avenue",
                         "link": "andrews",
-                        "area": 'whitis',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -109,14 +110,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "blanton",
                         "name": "Blanton",
                         "address": "2500 University Avenue",
-                        "area": 'whitis',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -189,14 +189,13 @@ app.controller('homepageController', function ($scope) {
                         "name": "Brackenridge",
                         "link": "brackenridge",
                         "address": "303 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -261,14 +260,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "carothers",
                         "name": "Carothers",
                         "address": "2501 Whitis Avenue",
-                        "area": 'whitis',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -309,14 +307,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "creekside",
                         "name": "Creekside",
                         "address": "2500 San Jacinto Blvd",
-                        "area": 'creekside',
-                        'gender': 'men',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "creekside",
+                        "gender": "men",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -405,14 +402,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "duren",
                         "name": "Duren",
                         "address": "2604 Whitis Avenue",
-                        "area": 'whitis',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -501,14 +497,14 @@ app.controller('homepageController', function ($scope) {
                         "name": "Jester East",
                         "link": "jester%20east",
                         "address": "201 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -621,14 +617,13 @@ app.controller('homepageController', function ($scope) {
                         "name": "Jester West",
                         "link": "jester%20west",
                         "address": "201 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -717,14 +712,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "kinsolving",
                         "name": "Kinsolving",
                         "address": "2605 Whitis Avenue",
-                        "area": 'whitis',
-                        'gender': 'female',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "female",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -821,14 +815,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "littlefield",
                         "name": "Littlefield",
                         "address": "2503 Whitis Avenue",
-                        "area": 'whitis',
-                        'gender': 'female',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "female",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -893,14 +886,13 @@ app.controller('homepageController', function ($scope) {
                         "name": "Moore-Hill",
                         "link": "moore-hill",
                         "address": "304 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -997,14 +989,13 @@ app.controller('homepageController', function ($scope) {
                         "name": "Prather",
                         "link": "prather",
                         "address": "305 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -1061,14 +1052,13 @@ app.controller('homepageController', function ($scope) {
                         "name": "Roberts",
                         "link": "roberts",
                         "address": "303 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -1149,14 +1139,13 @@ app.controller('homepageController', function ($scope) {
                         "name": "San Jacinto",
                         "link": "san%20jacinto",
                         "address": "309 East 21st Street",
-                        "area": 'jester',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "jester",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -1349,14 +1338,13 @@ app.controller('homepageController', function ($scope) {
                         "link": "whitis%20court",
                         "name": "Whitis Court",
                         "address": "2610 Whitis Avenue",
-                        "area": 'whitis',
-                        'gender': 'coed',
-                        'price': 10223,
-                        //walking directions
-                        'walk_to_greg': 10,
-                        'walk_to_pcl': 10,
-                        'walk_to_drag': 5,
-                        'walk_to_stadium': 15
+                        "area": "whitis",
+                        "gender": "coed",
+                        "price": 10223,
+                        "walk_to_greg": 10,
+                        "walk_to_pcl": 10,
+                        "walk_to_drag": 5,
+                        "walk_to_stadium": 15
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -1427,8 +1415,7 @@ app.controller('homepageController', function ($scope) {
                     }
                 }
             ]
-        }
-    ];
+        };
     $scope.geoJSON_attractions = [
         {
             "type": "FeatureCollection",
@@ -1540,13 +1527,82 @@ app.controller('homepageController', function ($scope) {
     };
 
     $scope.buildMap = function (map, filter) {
-        var listings = document.getElementById('listings');
-        var locations = false;
-        var locationGroup = false;
+
+        map.on('load', function(e) {
+            // Add the stores data as a source
+            map.addSource('dorms', {
+                type: 'geojson',
+                data: $scope.geoData
+            });
+
+            // Add a layer to the map with styling rules to render the source
+            map.addLayer({
+                id: 'dorms',
+                type: 'fill',
+                source: 'dorms',
+                paint: {
+                    'fill-color': '#bf5700',
+                    'fill-outline-color': '#994500',
+                    'fill-opacity': 0.75
+                }
+            });
+
+            buildLocationList($scope.geoData);
+        });
+
+        map.on('click', function (e) {
+            var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
+            if (!features.length) {
+                return;
+            }
+
+            var feature = features[0];
+
+            var popup = new mapboxgl.Popup()
+                .setLngLat(map.unproject(e.point))
+                .setHTML('<a href="' + feature.properties.link + '" target="_blank">' + '<h2 class="popup-header">' + feature.properties.name + '</h2></a><p class="popup-body">' + feature.properties.address + "</p>")
+                .addTo(map);
+        });
+
+        function buildLocationList(data) {
+            // Iterate through the list of stores
+            for (i = 0; i < data.features.length; i++) {
+                var currentFeature = data.features[i];
+                // Shorten data.feature.properties to just `prop` so we're not
+                // writing this long form over and over again.
+                var prop = currentFeature.properties;
+                // Select the listing container in the HTML and append a div
+                // with the class 'item' for each store
+                var listings = document.getElementById('listings');
+                var listing = listings.appendChild(document.createElement('div'));
+                listing.className = 'list-item';
+                listing.id = 'listing-' + i;
+
+                // Create a new link with the class 'title' for each store
+                // and fill it with the store address
+                var link = listing.appendChild(document.createElement('a'));
+                link.href = '/' + prop.link;
+                link.className = 'list-address';
+                link.dataPosition = i;
+                link.innerHTML = prop.name;
+
+                // Create a new direct link
+                var direct_link = listing.appendChild(document.createElement('a'));
+                direct_link.href = '#';
+                direct_link.className = 'direct-link';
+                direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
+
+                // Create a new div with the class 'details' for each store
+                // and fill it with the city and phone number
+                var details = listing.appendChild(document.createElement('div'));
+                details.innerHTML = prop.address;
+            }
+        }
+
 
         //FIXME clear location groups before rendering map
 
-        if (filter) {
+        /*if (filter) {
             locationGroup = L.layerGroup().addTo(map);
             locations = L.mapbox.featureLayer().addTo(locationGroup);
             locations.setGeoJSON(filter); // add our dorm data to the map
@@ -1558,7 +1614,7 @@ app.controller('homepageController', function ($scope) {
             attractions.setGeoJSON($scope.geoJSON_attractions);
         }
 
-        buildList();
+        buildList();*/
 
         // determine which dorm is the active one selected by the user
         function setActive(el) {
@@ -1578,9 +1634,6 @@ app.controller('homepageController', function ($scope) {
         });
 
         function buildList() {
-            if ($('.listings').children()) {
-                $('.listings').empty();
-            }
             locations.eachLayer(function (locale) {
                 var prop = locale.feature.properties;
                 var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>"; // add popups

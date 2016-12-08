@@ -1,0 +1,165 @@
+.facts {
+  background: #ffffff;
+  margin: auto;
+  z-index: 1000;
+  ul {
+    width: 100%;
+  }
+  @include media-query($on-palm){
+    padding: 0;
+    width: 100%;
+  }
+}
+
+div.facts-container {
+  padding-right: 1.5em;
+  @include media-query($on-palm){
+    margin-bottom: 5em;
+    width: 100%;
+  }
+}
+
+.main {
+  border-left: 1px solid lighten($grey-color, 25%);
+  padding: 0 0 0 1.5em;
+  @include media-query($on-palm){
+    border-left: 0;
+    margin-top: 3em;
+    padding: 0 1em 0 1em;
+  }
+}
+
+/**
+ * Page content
+ */
+.page-content {
+  padding: $spacing-unit 0;
+}
+
+.page-heading {
+  font-size: 20px;
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+img {
+  margin-bottom: .5rem;
+}
+
+.post-meta {
+  font-size: 1.25rem;
+  color: $grey-color;
+}
+
+.post-link {
+  display: block;
+  font-size: 24px;
+}
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
+  font-size: 6rem;
+  font-family: Sentinel;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+
+  @include media-query($on-laptop) {
+    font-size: 4rem;
+  }
+  @include media-query($on-palm) {
+    text-align: left;
+    font-size: 6rem;
+  }
+}
+
+.post-address {
+  text-transform: uppercase;
+}
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    font-size: 32px;
+
+    @include media-query($on-laptop) {
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 26px;
+
+    @include media-query($on-laptop) {
+      font-size: 22px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+
+    @include media-query($on-laptop) {
+      font-size: 18px;
+    }
+  }
+}
+
+article {
+  margin-top: 1rem;
+  h1, h2, h3, h4 {
+    font-family: Sentinel;
+    font-weight: bold;
+  }
+  h4, h5, h6 {
+    font-family: Sentinel;
+    font-weight: 300;
+  }
+  h5 {
+    font-style: italic;
+    font-size: 1.6rem;
+    @include media-query($on-mobile){
+      font-size: 1.8rem;
+    }
+  }
+  blockquote {
+    border-left-color: lighten($brand-color, 10%);
+    padding-left: 1rem;
+    p {
+      font-family: Sentinel;
+      font-weight: 300;
+      font-size: 2.5rem;
+      color: $grey-color-dark;
+      display: inline;
+      @include media-query($on-mobile){
+        font-size: 2.5rem;
+      }
+    }
+  }
+  hr {
+    margin: 1em 0 1em 0;
+  }
+}
+
+#minimap {
+  height: 25vh;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  width: 100%;
+}
