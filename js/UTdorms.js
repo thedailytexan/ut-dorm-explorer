@@ -1,8 +1,13 @@
-var app = angular.module('housingApp', ['ngRoute'],
+var app = angular.module('housingApp', ['ngRoute', 'LocalStorageModule'],
     function ($interpolateProvider) {
         $interpolateProvider.startSymbol('[[');
         $interpolateProvider.endSymbol(']]');
     });
+
+app.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+        .setStorageCookie(15, '/', false);
+});
 
 //TODO migrate to mapbox GL https://www.mapbox.com/help/building-a-store-locator/
 
@@ -18,18 +23,22 @@ app.directive('mapbox', [
             link: function (scope, elem) {
                 // build the map here
                 mapboxgl.accessToken = 'pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw';
-                /*var southWest = L.latLng(30.293, -97.732),
-                    northEast = L.latLng(30.281, -97.743),
+                /*var southWest = L.latLng(),
+                    northEast = L.latLng(,
                     bounds = L.latLngBounds(southWest, northEast);*/
+
+                var bounds = [
+                    [-97.728,30.293],
+                    [-97.755,30.28]
+                ]
 
                 var map = new mapboxgl.Map({
                     container: elem[0],
                     style: 'mapbox://styles/scif/civr8g5vj005n2jm9n9r6r593',
-                    center: [-97.738, 30.287],
-                    minZoom: 15
+                    center: [-97.743, 30.287],
+                    minZoom: 13,
+                    maxBounds: bounds
                 });
-
-                // TODO bounding
 
                 scope.callback(map);
 
@@ -39,7 +48,16 @@ app.directive('mapbox', [
     }
 ]);
 
-app.controller('homepageController', function ($scope) {
+app.filter('camelcase', function() {
+    return function(input) {
+        if (typeof input !== 'string') {
+            return;
+        }
+        return input.charAt(0).toUpperCase() + input.slice(1);
+    }
+});
+
+app.controller('homepageController', function ($scope, localStorageService) {
     $scope.geoData =
         {
             "type": "FeatureCollection",
@@ -1416,115 +1434,121 @@ app.controller('homepageController', function ($scope) {
                 }
             ]
         };
-    $scope.geoJSON_attractions = [
-        {
-            "type": "FeatureCollection",
-            "features": [
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "marker-color": "#a0a0a0",
-                        "marker-size": "small",
-                        "marker-symbol": "america-football",
-                        "name": "Darrell K Royal - Texas Memorial Stadium"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            -97.7325189113617,
-                            30.283686785034806
-                        ]
-                    }
+    $scope.attractions = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#a0a0a0",
+                    "marker-size": "small",
+                    "marker-symbol": "america-football",
+                    "name": "Darrell K Royal - Texas Memorial Stadium"
                 },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "marker-color": "#a0a0a0",
-                        "marker-size": "small",
-                        "marker-symbol": "basketball",
-                        "name": "Gregory Gym"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            -97.7363920211792,
-                            30.28396472774488
-                        ]
-                    }
-                },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "marker-color": "#a0a0a0",
-                        "marker-size": "small",
-                        "marker-symbol": "library",
-                        "name": "Perry-Casteñeda Library"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            -97.7382481098175,
-                            30.282788098216884
-                        ]
-                    }
-                },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "marker-color": "#a0a0a0",
-                        "marker-size": "small",
-                        "marker-symbol": "town-hall",
-                        "name": "Main Building (UT Tower)"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            -97.73939609527588,
-                            30.28604927297253
-                        ]
-                    }
-                },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "marker-color": "#a0a0a0",
-                        "marker-size": "small",
-                        "marker-symbol": "art-gallery",
-                        "name": "Blanton Museum of Art"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            -97.73743271827698,
-                            30.281027759978798
-                        ]
-                    }
-                },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "marker-color": "#a0a0a0",
-                        "marker-size": "small",
-                        "marker-symbol": "art-gallery",
-                        "name": "Harry Ransom Center"
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            -97.74125218391418,
-                            30.28433531680018
-                        ]
-                    }
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.7325189113617,
+                        30.283686785034806
+                    ]
                 }
-            ]
-        }
-    ];
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#a0a0a0",
+                    "marker-size": "small",
+                    "marker-symbol": "basketball",
+                    "name": "Gregory Gym"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.7363920211792,
+                        30.28396472774488
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#a0a0a0",
+                    "marker-size": "small",
+                    "marker-symbol": "library",
+                    "name": "Perry-Casteñeda Library"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.7382481098175,
+                        30.282788098216884
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#a0a0a0",
+                    "marker-size": "small",
+                    "marker-symbol": "town-hall",
+                    "name": "Main Building (UT Tower)"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73939609527588,
+                        30.28604927297253
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#a0a0a0",
+                    "marker-size": "small",
+                    "marker-symbol": "art-gallery",
+                    "name": "Blanton Museum of Art"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73743271827698,
+                        30.281027759978798
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "marker-color": "#a0a0a0",
+                    "marker-size": "small",
+                    "marker-symbol": "art-gallery",
+                    "name": "Harry Ransom Center"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.74125218391418,
+                        30.28433531680018
+                    ]
+                }
+            }
+        ]
+    };
 
     $scope.selectedFilters = {
         price: '',
         area: '',
         gender: ''
     };
+
+    $scope.onMap = false;
+
+    $scope.renderListingsStyle = $scope.$watch('onMap', function(){
+        if ($scope.onMap === true) {
+            return '.homepage--listing__active'
+        }
+    });
 
     $scope.buildMap = function (map, filter) {
 
@@ -1550,7 +1574,21 @@ app.controller('homepageController', function ($scope) {
             buildLocationList($scope.geoData);
         });
 
+
+        // TODO build a drag and drop marker that calculates your walking time from one location to the next
+
+        // hide our listings when the user moves within the map
+
+        map.on('mousedown', function (e) {
+            $scope.onMap = true;
+        });
+
+        map.on('mouseup', function(e) {
+            $scope.onMap = false;
+        });
+
         map.on('click', function (e) {
+            $('.homepage--listitem').removeClass('homepage--listitem__active');
             var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
             if (!features.length) {
                 return;
@@ -1558,177 +1596,124 @@ app.controller('homepageController', function ($scope) {
 
             var feature = features[0];
 
+            map.flyTo({
+                center: [map.unproject(e.point).lng - 0.001, map.unproject(e.point).lat],
+                zoom: 17
+            });
+
+            var currentListing = $('#dorm-listing-' + feature.properties.name.toLowerCase().replace(/\s+/g,''));
+
+            if (currentListing !== null) {
+                currentListing.addClass('homepage--listitem__active');
+                /*var listContainer = $('#listings');
+                listContainer.scroll();
+                listContainer.animate({
+                    scrollTop: currentListing.offset().top - 500
+                }, 750);*/
+                currentListing.get(0).scrollIntoView();
+
+            }
+
             var popup = new mapboxgl.Popup()
                 .setLngLat(map.unproject(e.point))
-                .setHTML('<a href="' + feature.properties.link + '" target="_blank">' + '<h2 class="popup-header">' + feature.properties.name + '</h2></a><p class="popup-body">' + feature.properties.address + "</p>")
+                .setHTML('<a class="popup--content__header" href="' + feature.properties.link + '" target="_blank">' +  feature.properties.name + '</a><p class="popup--content__body">' + feature.properties.address + "</p><p class='popup--content__body'>" + '$' + numberWithCommas(feature.properties.price) + "</p>")
                 .addTo(map);
         });
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
 
         function buildLocationList(data) {
             // Iterate through the list of stores
             for (i = 0; i < data.features.length; i++) {
                 var currentFeature = data.features[i];
-                // Shorten data.feature.properties to just `prop` so we're not
-                // writing this long form over and over again.
+
                 var prop = currentFeature.properties;
-                // Select the listing container in the HTML and append a div
-                // with the class 'item' for each store
+
                 var listings = document.getElementById('listings');
                 var listing = listings.appendChild(document.createElement('div'));
-                listing.className = 'list-item';
-                listing.id = 'listing-' + i;
+                listing.className = 'homepage--listitem';
+                listing.id = 'dorm-listing-' + prop.name.toLowerCase().replace(/\s+/g,'');
 
-                // Create a new link with the class 'title' for each store
-                // and fill it with the store address
                 var link = listing.appendChild(document.createElement('a'));
                 link.href = '/' + prop.link;
-                link.className = 'list-address';
+                link.className = 'homepage--listitem__name';
                 link.dataPosition = i;
                 link.innerHTML = prop.name;
 
+                var add_to_list = listing.appendChild(document.createElement('i'));
+                add_to_list.className = 'homepage--listitem__addtolist fa fa-plus';
+                add_to_list.setAttribute('data-toggle', 'tooltip');
+                add_to_list.setAttribute('data-placement', 'bottom');
+                add_to_list.setAttribute('title', 'Add to your list');
+                add_to_list.setAttribute('ng-click', 'compareAction.addToList(' + i + ')');
+
                 // Create a new direct link
-                var direct_link = listing.appendChild(document.createElement('a'));
-                direct_link.href = '#';
-                direct_link.className = 'direct-link';
-                direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
+                var direct_link = listing.appendChild(document.createElement('i'));
+                direct_link.className = 'homepage--listitem__directlink fa fa-location-arrow';
+                direct_link.setAttribute('data-toggle', 'tooltip');
+                direct_link.setAttribute('title', 'Show on map');
+                direct_link.setAttribute('data-placement', 'left');
 
-                // Create a new div with the class 'details' for each store
-                // and fill it with the city and phone number
+                var address = listing.appendChild(document.createElement('div'));
+                address.className = 'homepage--listitem__address';
+                address.innerHTML = prop.address;
+
                 var details = listing.appendChild(document.createElement('div'));
-                details.innerHTML = prop.address;
+                details.className = 'homepage--listitem__details';
+                details.innerHTML = '$' + numberWithCommas(prop.price);
             }
+
+            $('[data-toggle="tooltip"]').tooltip();
+
+            direct_link.addEventListener('click', function(e) {
+
+            });
         }
 
+    };
 
-        //FIXME clear location groups before rendering map
+    // build our comparison list
 
-        /*if (filter) {
-            locationGroup = L.layerGroup().addTo(map);
-            locations = L.mapbox.featureLayer().addTo(locationGroup);
-            locations.setGeoJSON(filter); // add our dorm data to the map
+    if(localStorageService.isSupported) { //if localstorage is supported
+        if (localStorageService.get('dt-selected_dorms') == null) { //first session on page
+            localStorageService.set('dt-selected_dorms', []); //set an empty array
         } else {
-            locationGroup = L.layerGroup().addTo(map);
-            locations = L.mapbox.featureLayer().addTo(locationGroup);
-            locations.setGeoJSON($scope.geoData); // add our dorm data to the map
-            var attractions = L.mapbox.featureLayer().addTo(map); // add our attractions data to the map
-            attractions.setGeoJSON($scope.geoJSON_attractions);
+            $scope.selected_comparisons = localStorageService.get('dt-selected_dorms'); //not first session on page, even if empty - we reflect that
+        }
+    } else { // no localstorage support, same logic as before
+        if (localStorageService.cookie.get('dt-selected_dorms') == undefined) {
+            localStorageService.cookie.set('dt-selected_dorms', $scope.selected_comparisons);
+        } else {
+            $scope.selected_comparisons = localStorageService.cookie.get('dt-selected_dorms');
+        }
+    }
+
+
+    $scope.$watchCollection('selected_comparisons', function() {
+        if (localStorageService.isSupported) {
+            localStorageService.set('dt-selected_dorms', $scope.selected_comparisons);
+        } else if ($scope.selected_comparisons.length === 0) {
+            localStorageService.cookie.set('dt-selected_dorms', $scope.selected_comparisons);
         }
 
-        buildList();*/
+    });
 
-        // determine which dorm is the active one selected by the user
-        function setActive(el) {
-            var siblings = listings.getElementsByTagName('div');
-            for (var i = 0; i < siblings.length; i++) {
-                siblings[i].className = siblings[i].className
-                    .replace(/active/, '').replace(/\s\s*$/, ''); // i'm very confused by what this does
+    $scope.compareAction = {
+        element: $('.compare'),
+        show: false,
+        addToList: function(index) {
+            alert('add!');
+            if ($scope.selected_comparisons.indexOf($scope.geoData.features[index] > -1)) {
+                return false;
+            } else {
+                $scope.selected_comparisons.push($scope.geoData.features[index]);
             }
-            el.className += ' active';
+        },
+        removeFromList: function(index) {
+            $scope.selected_comparisons.splice(index, 1);
         }
-
-        // what happens when we click an attraction in the map
-        attractions.eachLayer(function (layer) {
-            var prop = layer.feature.properties;
-            var attraction_popup = '<span>' + prop.name + '</span>';
-            layer.bindPopup(attraction_popup);
-        });
-
-        function buildList() {
-            locations.eachLayer(function (locale) {
-                var prop = locale.feature.properties;
-                var popup = '<a href="' + prop.link + '" target="_blank">' + '<h2>' + prop.name + '</h2></a><p>' + prop.address + "</p>"; // add popups
-
-                var listing = listings.appendChild(document.createElement('div'));
-                listing.className = 'list-item';
-
-                var link = listing.appendChild(document.createElement('a'));
-                link.href = '/' + prop.link;
-                link.className = 'title';
-                link.innerHTML = prop.name;
-
-                var direct_link = listing.appendChild(document.createElement('a'));
-                direct_link.href = '#';
-                direct_link.className = 'direct-link';
-                direct_link.innerHTML = "<i class='fa fa-location-arrow'></i>";
-
-                // what happens when we click the location icon in the list
-                direct_link.onclick = function () {
-                    setActive(listing);
-                    if (window.innerWidth < 767) {
-                        // mobile specific click events
-                        $('html, body').animate({
-                            scrollTop: $('.main-container').offset().top - 18
-                        }, 750);
-                    }
-                    setActive(listing);
-                    map.setView(locale.getLatLng(), 18);
-                    locale.openPopup();
-                    return false;
-                };
-                // what happens when we click a dorm on the list
-                locale.on('click', function (e) {
-                    map.setView(locale.getLatLng(), 18);
-                    setActive(listing);
-                });
-                locale.bindPopup(popup); // bind the popup to the map
-            });
-        }
-
-        // certain filter actions have to be within buildMap() because they access variables inside this scope
-
-        $scope.filterSelectorAction = function (filter, value) {
-            var list = $scope.geoData[0].features,
-                opts = {
-                    keys: ['properties.' + filter],
-                    shouldSort: true,
-                    location: 0,
-                    distance: 100,
-                    threshold: .25
-                },
-                fuse = new Fuse(list, opts),
-                result = fuse.search(value);
-
-            $scope.selectedFilters[filter] = value;
-            locations.setFilter(function (f) {
-                $scope.buildMap(map, result);
-                return f.properties[filter] === value;
-            });
-
-
-            /* if(filter === 'price') {
-             switch (value) {
-             case 'ascending':
-             // TODO: place code for ascending list builder here
-             break;
-             case 'descending':
-             // TODO: build descending list builder here
-             break;
-             }
-             } */
-            //TODO: figure out how to filter multiple values at once
-
-            return false;
-        };
-
-        $scope.resetFilters = function () {
-            $('#filter-reset-icon').addClass('fast-spin');
-            setTimeout(function () {
-                $('#filter-reset-icon').removeClass('fast-spin');
-            }, 300);
-            $scope.selectedFilters.price = '';
-            $scope.selectedFilters.area = '';
-            $scope.selectedFilters.gender = '';
-            $('.radio-filter-selector').each(function () {
-                if ($(this).is(':checked')) {
-                    $(this).removeAttr('checked');
-                }
-            });
-            locations.setFilter(function () {
-                return true;
-            });
-
-            $scope.buildMap(map);
-        };
     };
 
     /* --------------------------

@@ -1,0 +1,24 @@
+<div class="compare" ng-show="compareAction.show === true">
+    <div class="compare--overlay"></div>
+    <div class="compare--container">
+        <div class="compare--info">
+            <div class="compare--info__header">
+                <h3>Compare Residence Halls</h3>
+                <i class="fa fa-close" ng-click="compareAction.show = false"></i>
+            </div>
+            <p ng-show="selected_comparisons.length === 0">You haven't selected any residence halls to compare!</p>
+            <div class="compare--item__container">
+                <div class="compare--item" ng-repeat="dorm in selected_comparisons">
+                    <h3 class="compare--item__name">[[ dorm.properties.name ]]</h3>
+                    <p class="compare--item__property">Gender: [[ dorm.properties.gender | camelcase ]]</p>
+                    <p class="compare--item__price">Pricing starts at <b>$[[ dorm.properties.price ]]</b> per long session (August - May)</p>
+                    <div class="compare--item__rank">
+                        <p style="margin-bottom: 0;">4/5*</p>
+                        <p style="font-style: italic; font-size: .9em;">*This ranking is entirely unscientific and is collected from current/past residents.</p>
+                    </div>
+                    <p class="compare--item__property"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

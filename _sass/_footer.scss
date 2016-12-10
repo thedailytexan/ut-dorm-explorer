@@ -1,15 +1,8 @@
-/**
- * Site footer
- */
 .site-footer {
-  background: #fff;
+  border-top: 1px solid lightgray;
   padding: 1em 2em 0;
   margin: auto;
-  height: 7.5%;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   a {
     color: #337ab7;
     &:hover {

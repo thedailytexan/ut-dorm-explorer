@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow: hidden;">
 
   {% include head.html %}
 
-  <body ng-app="housingApp">
+  <body ng-app="housingApp"  style="overflow: hidden;">
+    <div class="wrapper">
+      {% include header.html %}
 
-    {% include header.html %}
+      {% include homepage.html %}
+      <div class="push"></div>
+    </div>
 
-    {% include homepage.html %}
-
+    {% comment %}
     {% include footer.html %}
-
+    {% endcomment %}
   </body>
   <script src="/js/UTdorms.js"></script>
 </html>

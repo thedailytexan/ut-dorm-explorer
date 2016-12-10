@@ -1,18 +1,29 @@
-<div class="container-fluid homepage-main-container" ng-controller="homepageController">
-    <div class="col-md-12">
-        {% comment %}
-            {% include filter.html %}
-        {% endcomment %}
-    </div>
-</div>
-
 <div ng-controller="homepageController"> <!-- TODO split apart controllers -->
-    <div class="homepage--listings">
-        <h2 class="homepage--listings__header">Residence Halls Explorer</h2>
-        <p class="homepage--listings__copy">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+    <div class="homepage--listings" ng-class="renderListingStyle()">
+        <div class="homepage--listings__information">
+            <h2 class="homepage--listings__header">Residence Halls Explorer</h2>
+            <p class="homepage--listings__copy">Created by <a href="" class="homepage--listings__copy" style="font-weight: bold;font-style: italic;">The Daily Texan</a></p>
+            <p class="homepage--listings__copy">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+        </div>
         <div id='listings' class='listings'>
 
         </div>
+        <div class="homepage--footer">
+            <p class="homepage--footer__copy" style="margin-bottom: 0;">
+                Technical problems? Corrections? <a href="mailto:managingeditor@dailytexanonline.com?Subject=Housing%20interactive%20bug%20reporting" target="_top">Let us know.</a>
+            </p>
+            <p class="homepage--footer__copy">Lived on campus? <a href="#" target="_top">Contribute to this explorer!</a></p>
+        </div>
     </div>
     <mapbox id="main-map" callback="buildMap"></mapbox>
+    <div class="homepage--compare">
+        <p class="homepage--compare__header">Your Residence Hall List</p>
+        <p class="homepage--compare_-directions">Click the <i style="color: #333" class="fa fa-plus"></i> in the list to add and compare dorms. Your selections are saved between visits.</p>
+        <div class="homepage--compare__item" ng-repeat="dorm in selected_comparisons">
+            <p>[[ dorm.properties.name ]]</p>
+            <i class="homepage--compare__remove fa fa-close" ng-click="compareAction.removeFromList($index)"></i>
+        </div>
+        <button ng-show="selected_comparisons.length > 1" class="btn btn-primary btn-sm" ng-click="compareAction.show = true">Compare</button>
+    </div>
+    {% include compare.html %}
 </div>

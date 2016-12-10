@@ -8,18 +8,11 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
+*/
 /**
  * Basic styling
  //
-body {
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  font-weight: 300;
-  color: $text-color;
-  background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
-}
+
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -100,13 +93,22 @@ blockquote {
   }
 }
 
+/**
+ * Body
+ */
+
+body {
+  font-family: $base-font-family;
+  line-height: 1.6;
+  font-weight: normal;
+}
 
 /**
  * Links: disable hovering
  */
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:hover {
     text-decoration: none !important;
@@ -145,4 +147,11 @@ a {
     flex-direction: column;
   }
 
+}
+
+/**
+ * Tooltip
+ */
+.tooltip-inner {
+  font-family: $base-font-family;
 }
