@@ -12,7 +12,7 @@ hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo
 iframe: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.1292001809215!2d-97.74182028487012!3d30.290383313867196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b582f6343421%3A0xe616f20f52f36d5e!2sKinsolving+Residence+Hall!5e0!3m2!1sen!2sus!4v1462317713758
 
 next-dorm: littlefield
-prev-dorm: jester west
+prev-dorm: jesterwest
 ---
 
 Kinsolving is one of two all female dorms on campus. It is the larger of the two, holding 735 women throughout five floors. The dormitory was constructed in 1958, and features accessible accommodations, built-in furniture, community or connecting bathrooms, and a computer lab. There are many amenities in Kinsolving, including the Academic Community Center, Kin’s Market (a convenience store), a community garden, a 24-hour desk, a patio and a sun deck. It also has a large buffet style dining hall. The Drag, the communication school, and the Student Services Building are all near Kinsolving.

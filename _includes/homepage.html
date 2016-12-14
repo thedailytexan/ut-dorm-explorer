@@ -3,10 +3,15 @@
         <div class="homepage--listings__information">
             <h2 class="homepage--listings__header">Residence Halls Explorer</h2>
             <p class="homepage--listings__copy">Created by <a href="" class="homepage--listings__copy" style="font-weight: bold;font-style: italic;">The Daily Texan</a></p>
-            <p class="homepage--listings__copy">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+            <p class="homepage--listings__copy">Select a dorm from the list or the map</p>
         </div>
-        <div id='listings' class='listings'>
-
+        <div id='listings' class='homepage--listings__container'>
+            <div ng-repeat="dorm in geoData.features" class="homepage--listitem" id="dorm-listing-[[ dorm.properties.link ]]">
+                <a href="" class="homepage--listitem__name">[[ dorm.properties.name ]]</a>
+                <i class="fa fa-plus homepage--listitem__addtolist" ng-click="compareAction.addToList($index)" data-toggle="tooltip" title="Add to your list" data-placement="bottom"></i>
+                <div class="homepage--listitem__address">[[ dorm.properties.address ]]</div>
+                <p class="homepage--listitem__details">Beginning Price: $[[dorm.properties.price]] | Gender: [[ dorm.properties.gender | camelcase ]] | Area: [[ dorm.properties.area | camelcase ]]</p>
+            </div>
         </div>
         <div class="homepage--footer">
             <p class="homepage--footer__copy" style="margin-bottom: 0;">

@@ -9,6 +9,8 @@
   width: 100vw;
 }
 
+// listings
+
 .homepage--listings {
   background: #fff;
   position: absolute;
@@ -24,10 +26,11 @@
   -ms-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
 
-  &.map-active {
-    opacity: .5;
-  }
   
   .homepage--listings__header {
     color: #fff;
@@ -38,15 +41,17 @@
   }
 }
 
+.homepage-listing__active {
+  opacity: .5;
+}
 
+// header
 
 .homepage--listings__information {
-  background: #cc5527;
+  background: #bf5700;
   padding: 0 2em 1em 2em;
-  position: fixed;
-  left: 12%;
-  top:0;
-  width: 30%;
+  width: 100%;
+  flex: .1;
   z-index: 1000;
   
   .homepage--listings__copy {
@@ -54,13 +59,12 @@
   }
 }
 
+// footer
+
 .homepage--footer {
   color: #333;
   background: #ececec;
-  position: fixed;
-  width: 30%;
-  bottom: 0;
-  left: 12%;
+  flex: .1;
   padding: 1em 2em 0 2em;
   z-index: 1000;
 
@@ -71,6 +75,79 @@
   }
 }
 
+// item container
+
+.homepage--listings__container {
+  border-top: 1px solid lightgray;
+  flex: .8;
+  position: relative;
+  height: 100%;
+  z-index:400;
+  overflow:scroll;
+  font-size: 1.8rem;
+
+  .homepage--listitem {
+    border-bottom: 1px solid lightgray;
+    padding: 4px 1.5rem 2px 1.5rem;
+    line-height: 1.5;
+
+    @include media-query($on-mobile){
+      padding: 1rem;
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    .homepage--listitem__name {
+      color: #bf5700;
+      font-weight: bolder;
+
+      &:hover {
+        color: darken(#bf5700, 10%);
+      }
+    }
+
+    .homepage--listitem__address {
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    .homepage--listitem__details {
+      color: #999;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+  }
+  @include media-query($on-mobile){
+    margin-bottom: 1em;
+    margin-right: 0;
+  }
+}
+
+// active
+
+.homepage--listitem__active {
+  background-color: #737373;
+  border: 0;
+  color: #fff;
+
+  a.homepage--listitem__name, .homepage--listitem__address, .homepage--listitem__details {
+    color: #fff !important;
+  }
+
+  .homepage--listitem__addtolist {
+    color: #fff !important;
+  }
+
+  a:hover, .homepage--listitem__addtolist:hover {
+    color: darken(#fff, 30%) !important;
+  }
+}
+
+// icons
+
 .homepage--listitem__directlink, .homepage--listitem__addtolist {
   margin-top: 1em;
 }
@@ -78,14 +155,16 @@
 .homepage--listitem__directlink, .homepage--listitem__addtolist, .homepage--compare__remove {
   float: right;
   font-size: 1.5rem;
-  color: #43a4c3 !important;
+  color: #337ab7 !important;
   line-height: 2;
   margin-left: 1.5em;
 
   &:hover {
-    color: darken(#43a4c3, 20%) !important;
+    color: lighten(#337ab7, 20%) !important;
   }
 }
+
+// popups
 
 div.mapboxgl-popup-content {
   font-family: $base-font-family;
@@ -100,24 +179,6 @@ a.popup--content__header {
 
 .popup--content__body {
   font-size: 1.25em;
-}
-
-.homepage--listitem__active {
-  background-color: #555555;
-  border: 0;
-  color: #fff;
-  
-  a.homepage--listitem__name {
-    color: #fff !important;
-  }
-
-  .homepage--listitem__directlink, .homepage--listitem__addtolist {
-    color: #fff !important;
-  }
-
-  a:hover, homepage--listitem__directlink:hover {
-    color: darken(#fff, 30%) !important;
-  }
 }
 
 /* -- HOMEPAGE TOOLS -- */
@@ -183,47 +244,6 @@ a.popup--content__header {
   text-align: center;
 }
 
-.listings {
-  border-top: 1px solid lightgray;
-  padding-top: 8.75em;
-  padding-bottom: 3.75em;
-  position: relative;
-  height: 100%;
-  z-index:400;
-  overflow:auto;
-  font-size: 1.8rem;
-  .homepage--listitem {
-    border-bottom: 1px solid lightgray;
-    padding: 4px 1.5rem 2px 1.5rem;
-    line-height: 1.5;
-
-    @include media-query($on-mobile){
-      padding: 1rem;
-    }
-
-    &:last-of-type {
-      border-bottom: 0;
-    }
-    
-    .homepage--listitem__name {
-      color: #cc5527;
-      font-weight: bolder;
-      
-      &:hover {
-        color: darken(#cc5527, 10%);
-      }
-    }
-
-    .homepage--listitem__address {
-      font-size: 1.5rem;
-    }
-
-  }
-  @include media-query($on-mobile){
-    margin-bottom: 1em;
-    margin-right: 0;
-  }
-}
 
 
 .leaflet-popup-content > h2 {

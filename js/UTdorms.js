@@ -30,7 +30,7 @@ app.directive('mapbox', [
                 var bounds = [
                     [-97.728,30.293],
                     [-97.755,30.28]
-                ]
+                ];
 
                 var map = new mapboxgl.Map({
                     container: elem[0],
@@ -58,8 +58,7 @@ app.filter('camelcase', function() {
 });
 
 app.controller('homepageController', function ($scope, localStorageService) {
-    $scope.geoData =
-        {
+    $scope.geoData = {
             "type": "FeatureCollection",
             "features": [
                 {
@@ -74,7 +73,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "address": "2401 Whitis Avenue",
                         "link": "andrews",
                         "area": "whitis",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -129,7 +128,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "name": "Blanton",
                         "address": "2500 University Avenue",
                         "area": "whitis",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -208,7 +207,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "link": "brackenridge",
                         "address": "303 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -279,7 +278,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "name": "Carothers",
                         "address": "2501 Whitis Avenue",
                         "area": "whitis",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -326,7 +325,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "name": "Creekside",
                         "address": "2500 San Jacinto Blvd",
                         "area": "creekside",
-                        "gender": "men",
+                        "gender": "male-only",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -421,7 +420,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "name": "Duren",
                         "address": "2604 Whitis Avenue",
                         "area": "whitis",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -513,11 +512,11 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "fill": "#BF5700",
                         "fill-opacity": 0.5,
                         "name": "Jester East",
-                        "link": "jester%20east",
+                        "link": "jestereast",
                         "address": "201 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
-                        "price": 10223,
+                        "gender": "co-ed",
+                        "price": 10544,
 
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -633,10 +632,10 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "fill": "#BF5700",
                         "fill-opacity": 0.5,
                         "name": "Jester West",
-                        "link": "jester%20west",
+                        "link": "jesterwest",
                         "address": "201 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -731,7 +730,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "name": "Kinsolving",
                         "address": "2605 Whitis Avenue",
                         "area": "whitis",
-                        "gender": "female",
+                        "gender": "female-only",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -834,7 +833,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "name": "Littlefield",
                         "address": "2503 Whitis Avenue",
                         "area": "whitis",
-                        "gender": "female",
+                        "gender": "female-only",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -905,7 +904,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "link": "moore-hill",
                         "address": "304 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -1008,7 +1007,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "link": "prather",
                         "address": "305 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -1071,7 +1070,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "link": "roberts",
                         "address": "303 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -1155,10 +1154,10 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "fill": "#BF5700",
                         "fill-opacity": 0.5,
                         "name": "San Jacinto",
-                        "link": "san%20jacinto",
+                        "link": "sanjacinto",
                         "address": "309 East 21st Street",
                         "area": "jester",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -1353,11 +1352,11 @@ app.controller('homepageController', function ($scope, localStorageService) {
                         "stroke-opacity": 1,
                         "fill": "#BF5700",
                         "fill-opacity": 0.5,
-                        "link": "whitis%20court",
+                        "link": "whitiscourt",
                         "name": "Whitis Court",
                         "address": "2610 Whitis Avenue",
                         "area": "whitis",
-                        "gender": "coed",
+                        "gender": "co-ed",
                         "price": 10223,
                         "walk_to_greg": 10,
                         "walk_to_pcl": 10,
@@ -1434,6 +1433,205 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 }
             ]
         };
+    $scope.geoMarkers = { "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 0
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73982524871825,
+                        30.288177779561856
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 1
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73937463760376,
+                        30.288661840447016
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 2
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73593068122864,
+                        30.283135529663728
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 3
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.74010956287384,
+                        30.288689633344013
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 4
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73337721824645,
+                        30.288527508000662
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 5
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.74039924144745,
+                        30.291390138943623
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 6
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73595750331877,
+                        30.2823758113038
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 7
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73670315742491,
+                        30.282125658849186
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 8
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73965895175934,
+                        30.290320136184143
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73972332477568,
+                        30.289319603563253
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 10
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73538887500763,
+                        30.283603402068238
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 11
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73509919643402,
+                        30.282389708643695
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 12
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73516893386841,
+                        30.2830660434728
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 13
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.73434281349182,
+                        30.282496254850795
+                    ]
+                }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 14
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -97.74073183536528,
+                        30.290852822999625
+                    ]
+                }
+            }
+        ]
+    };
     $scope.attractions = {
         "type": "FeatureCollection",
         "features": [
@@ -1559,6 +1757,11 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 data: $scope.geoData
             });
 
+            map.addSource('dorm_markers', {
+                type: 'geojson',
+                data: $scope.geoMarkers
+            });
+
             // Add a layer to the map with styling rules to render the source
             map.addLayer({
                 id: 'dorms',
@@ -1571,7 +1774,15 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 }
             });
 
-            buildLocationList($scope.geoData);
+            map.addLayer({
+                id: 'dorm_markers',
+                type: 'symbol',
+                source: 'dorm_markers'
+            });
+
+            //buildLocationList($scope.geoData);
+
+            $('[data-toggle="tooltip"]').tooltip();
         });
 
 
@@ -1579,12 +1790,8 @@ app.controller('homepageController', function ($scope, localStorageService) {
 
         // hide our listings when the user moves within the map
 
-        map.on('mousedown', function (e) {
+        map.on('mousemove', function (e) {
             $scope.onMap = true;
-        });
-
-        map.on('mouseup', function(e) {
-            $scope.onMap = false;
         });
 
         map.on('click', function (e) {
@@ -1601,7 +1808,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 zoom: 17
             });
 
-            var currentListing = $('#dorm-listing-' + feature.properties.name.toLowerCase().replace(/\s+/g,''));
+            var currentListing = $('#dorm-listing-' + feature.properties.link);
 
             if (currentListing !== null) {
                 currentListing.addClass('homepage--listitem__active');
@@ -1616,12 +1823,24 @@ app.controller('homepageController', function ($scope, localStorageService) {
 
             var popup = new mapboxgl.Popup()
                 .setLngLat(map.unproject(e.point))
-                .setHTML('<a class="popup--content__header" href="' + feature.properties.link + '" target="_blank">' +  feature.properties.name + '</a><p class="popup--content__body">' + feature.properties.address + "</p><p class='popup--content__body'>" + '$' + numberWithCommas(feature.properties.price) + "</p>")
+                .setHTML('<a class="popup--content__header" href="' + feature.properties.link + '" target="_blank">' +  feature.properties.name + '</a><p class="popup--content__body">' + feature.properties.address + "</p>")
                 .addTo(map);
+        });
+
+        map.on('mousemove', function (e) {
+            var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
+            map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
         });
 
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function camelCase(input) {
+            if (typeof input !== 'string') {
+                return;
+            }
+            return input.charAt(0).toUpperCase() + input.slice(1);
         }
 
         function buildLocationList(data) {
@@ -1649,29 +1868,32 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 add_to_list.setAttribute('title', 'Add to your list');
                 add_to_list.setAttribute('ng-click', 'compareAction.addToList(' + i + ')');
 
-                // Create a new direct link
+                /* Create a new direct link
                 var direct_link = listing.appendChild(document.createElement('i'));
                 direct_link.className = 'homepage--listitem__directlink fa fa-location-arrow';
                 direct_link.setAttribute('data-toggle', 'tooltip');
                 direct_link.setAttribute('title', 'Show on map');
                 direct_link.setAttribute('data-placement', 'left');
+                direct_link.id = i;
+                direct_link.setAttribute('ng-click', 'flyToDorm(' + i + ')'); */
 
                 var address = listing.appendChild(document.createElement('div'));
                 address.className = 'homepage--listitem__address';
                 address.innerHTML = prop.address;
 
-                var details = listing.appendChild(document.createElement('div'));
+                var details = listing.appendChild(document.createElement('p'));
                 details.className = 'homepage--listitem__details';
-                details.innerHTML = '$' + numberWithCommas(prop.price);
+                details.innerHTML = 'Beginning Price: $' + numberWithCommas(prop.price) + ' | ' + 'Gender: ' + camelCase(prop.gender) + ' | ' + 'Area: ' + camelCase(prop.area);
             }
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-            direct_link.addEventListener('click', function(e) {
-
-            });
         }
 
+    };
+
+    $scope.flyToDorm = function(id) {
+        map.flyTo({
+            center: $scope.geoMarkers.features[id].geometry.coordinates,
+            zoom: 17
+        })
     };
 
     // build our comparison list
@@ -1679,15 +1901,13 @@ app.controller('homepageController', function ($scope, localStorageService) {
     if(localStorageService.isSupported) { //if localstorage is supported
         if (localStorageService.get('dt-selected_dorms') == null) { //first session on page
             localStorageService.set('dt-selected_dorms', []); //set an empty array
-        } else {
-            $scope.selected_comparisons = localStorageService.get('dt-selected_dorms'); //not first session on page, even if empty - we reflect that
         }
+        $scope.selected_comparisons = localStorageService.get('dt-selected_dorms'); //not first session on page, even if empty - we reflect that
     } else { // no localstorage support, same logic as before
         if (localStorageService.cookie.get('dt-selected_dorms') == undefined) {
-            localStorageService.cookie.set('dt-selected_dorms', $scope.selected_comparisons);
-        } else {
-            $scope.selected_comparisons = localStorageService.cookie.get('dt-selected_dorms');
+            localStorageService.cookie.set('dt-selected_dorms', []);
         }
+        $scope.selected_comparisons = localStorageService.cookie.get('dt-selected_dorms'); // [ ... ]
     }
 
 
@@ -1704,12 +1924,12 @@ app.controller('homepageController', function ($scope, localStorageService) {
         element: $('.compare'),
         show: false,
         addToList: function(index) {
-            alert('add!');
+            console.log($scope.selected_comparisons);
+            console.log($scope.geoData.features[index]);
             if ($scope.selected_comparisons.indexOf($scope.geoData.features[index] > -1)) {
-                return false;
-            } else {
-                $scope.selected_comparisons.push($scope.geoData.features[index]);
+                return;
             }
+            $scope.selected_comparisons.unshift($scope.geoData.features[index]);
         },
         removeFromList: function(index) {
             $scope.selected_comparisons.splice(index, 1);
