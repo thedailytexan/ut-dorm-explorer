@@ -155,3 +155,19 @@ a {
 .tooltip-inner {
   font-family: $base-font-family;
 }
+
+/**
+ * ng-cloak
+ */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/**
+ * Horizontal rules
+ */
+
+ hr {
+  border-color: lightgray !important;
+ }

@@ -1,11 +1,12 @@
-.compare {
+.popup {
   -webkit-transition: all 1.5s;
   -moz-transition: all 1.5s;
   -ms-transition: all 1.5s;
   -o-transition: all 1.5s;
   transition: all 1.5s;
+  overflow: scroll !important;
 }
-.compare--overlay {
+.popup--overlay {
   background: rgba(0,0,0,.75);
   height: 100vh;
   width: 100vw;
@@ -17,7 +18,8 @@
   justify-content: flex-end;
 }
 
-.compare--container {
+.popup--container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,12 +31,14 @@
   z-index:10000;
 }
 
-.compare--info {
+.popup--info {
+  overflow: scroll !important;
   background: #fff;
   border-radius: 10px;
   max-width: 100%;
-  z-index:12000;
+  z-index: 12000;
   padding: 1em 2em;
+  max-height: 90vh;
 
   #close {
     color: #333;
@@ -55,7 +59,7 @@
 
 }
 
-.compare--info__header {
+.popup--info__header {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -89,7 +93,6 @@
   align-items: flex-start;
   align-content: center;
   flex-wrap: wrap;
-  padding-top: 1em;
 
   &:nth-child(6):last-of-type {
     flex: .2;
@@ -102,10 +105,27 @@
   align-content: center;
   align-items: flex-start;
   flex: .5;
-  padding: 1em;
+  padding: 0 1em;
   border: 1px solid lightgray;
   border-radius: 3px;
   min-width: 25%;
   width: 50%;
   margin: .5em;
+}
+
+.compare--item__name {
+  color: $brand-color;
+  font-family: $header-font-family;
+  font-weight: 400;
+}
+
+.compare--item__rank {
+  border-top: 1px solid lightgrey;
+  padding-top: 1em;
+  width: 100%;
+}
+
+.star {
+  font-size: 1.5em;
+  color: $brand-color;
 }

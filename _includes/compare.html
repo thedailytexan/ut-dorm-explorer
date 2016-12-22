@@ -1,20 +1,29 @@
-<div class="compare" ng-show="compareAction.show === true">
-    <div class="compare--overlay" ng-click="compareAction.show = false"></div>
-    <div class="compare--container">
-        <div class="compare--info">
-            <div class="compare--info__header">
-                <h3>Compare Residence Halls</h3>
+<div class="popup" ng-show="compareAction.show === true" ng-cloak ng-if="mobile===false">
+    <div class="popup--overlay" ng-click="compareAction.show = false"></div>
+    <div class="popup--container">
+        <div class="popup--info">
+            <div class="popup--info__header">
+                <h3 style="font-weight: 400;">Compare Residence Halls</h3>
                 <i class="fa fa-close" ng-click="compareAction.show = false"></i>
             </div>
+            <p ng-show="selected_comparisons.length > 0">Here are the residence halls you selected for comparison:</p>
             <p ng-show="selected_comparisons.length === 0">You haven't selected any residence halls to compare!</p>
             <div class="compare--item__container">
                 <div class="compare--item" ng-repeat="dorm in selected_comparisons">
                     <h3 class="compare--item__name">[[ dorm.properties.name ]]</h3>
-                    <p class="compare--item__property">Gender: [[ dorm.properties.gender | camelcase ]]</p>
-                    <p class="compare--item__price">Pricing starts at <b>$[[ dorm.properties.price ]]</b> per long session (August - May)</p>
+                    <p class="compare--item__property">Gender: <b>[[ dorm.properties.gender | camelcase ]]</b></p>
+                    <p class="compare--item__property">Area of campus: <b>[[ dorm.properties.area | camelcase ]]</b></p>
+                    <p class="compare--item__price">Prices start at <b>$[[ dorm.properties.price ]]</b> per long session (August - May) for a shared space with community bath.</p>
+                    <p class="compare--item__property">A full price breakdown is available <a target="blank" rel="nofollow noreferrer" href="http://housing.utexas.edu/future/prices-billing">here</a>.</p>
                     <div class="compare--item__rank">
-                        <p style="margin-bottom: 0;">4/5*</p>
-                        <p style="font-style: italic; font-size: .9em;">*This ranking is entirely unscientific and is collected from current/past residents.</p>
+                        <p><b>Resident Ratings</b></p>
+                        <p class="compare--item__aggregate">Average: <b style="font-size: 1.75em">[[ dorm.properties.average ]]</b> / 5</p>
+                        <hr>
+                        <p class="compare--item__location">Location: <b style="font-size: 1.25em">[[ dorm.properties.location ]]</b> / 5</p>
+                        <p class="compare--item__food">Food: <b style="font-size: 1.25em">[[ dorm.properties.food ]]</b> / 5</p>
+                        <p class="compare--item__comfort">Comfort: <b style="font-size: 1.25em">[[ dorm.properties.comfort ]]</b> / 5</p>
+                        <p class="compare--item__environment">Environment: <b style="font-size: 1.25em">[[ dorm.properties.environment ]]</b> / 5</p>
+                        <p style="font-style: italic; font-size: .8em;">*This ranking is entirely unscientific and is collected from current/past residents.</p>
                     </div>
                     <p class="compare--item__property"></p>
                 </div>
