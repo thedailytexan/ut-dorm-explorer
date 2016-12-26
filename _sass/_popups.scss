@@ -29,6 +29,7 @@
   width: 100vw;
   flex-wrap: wrap;
   z-index:10000;
+  top: 0;
 }
 
 .popup--info {
@@ -39,6 +40,7 @@
   z-index: 12000;
   padding: 1em 2em;
   max-height: 90vh;
+
 
   #close {
     color: #333;
@@ -93,6 +95,8 @@
   align-items: flex-start;
   align-content: center;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+
 
   &:nth-child(6):last-of-type {
     flex: .2;
@@ -117,6 +121,10 @@
   color: $brand-color;
   font-family: $header-font-family;
   font-weight: 400;
+
+  &:hover {
+    color: darken($brand-color, 10%);
+  }
 }
 
 .compare--item__rank {

@@ -141,6 +141,14 @@
     a {
       font-style: italic;
     }
+
+    @include media-query($on-laptop) {
+      font-size: 1.1rem;
+    }
+
+    @include media-query($on-tablet) {
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -159,13 +167,14 @@
     border-top: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 25vh;
+    align-items: flex-start;
+    padding: 1em 0;
 
     .homepage--listings__placeholder {
       text-align: center;
       font-style: italic;
       font-size: 1.5rem;
+      padding: 3em 0;
     }
   }
 
@@ -209,6 +218,7 @@
       color: #999;
       font-size: 1.25rem;
       font-style: italic;
+      font-weight: 400;
     }
 
   }
@@ -343,14 +353,4 @@ a.popup--content__header {
   font-weight: bold;
   margin-bottom: .5rem;
   text-align: center;
-}
-
-
-
-.leaflet-popup-content > h2 {
-  font-size: 2rem !important;
-}
-
-.footer-icon:hover {
-  color: darken($brand-color, 10%);
 }

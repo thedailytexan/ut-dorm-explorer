@@ -14,7 +14,7 @@ layout: dorm
                 </li>
                 <li class="list-group-item sidebar--facts__item">
                     <i class="fa fa-usd" data-toggle="tooltip" data-placement="left" title="Cost (Lowest)"></i> &nbsp;
-                    <a class="fact-link" href="http://housing.utexas.edu/future/prices-billing" target="_blank">{{ page.price }}/Long Session</a>
+                    <a class="fact-link" href="http://housing.utexas.edu/future/prices-billing" target="_blank">{{ page.price }} / Long Session</a>
                 </li>
                 <li class="list-group-item sidebar--facts__item">
                     <i class="fa fa-users" data-toggle="tooltip" data-placement="left" title="Gender"></i> &nbsp; <span>{{ page.gender }}</span>
@@ -50,14 +50,14 @@ layout: dorm
         <p class="post-meta">Photo Credit: <a href="http://www.dailytexanonline.com/author/junyuan-tan" target="_blank">Junyuan
             Tan</a></p>
         <article class="post-content">
-            <h1>Student Ratings</h1>
-            <p>Average: {{ page.average_rating }}</p>
+            <h1>Resident Ratings<sup>*</sup></h1>
+            <p class="post--rating__average">Average: <b style="color: #bf5700; font-size: 1.5em;">{{ page.average_rating }}</b> / 5</p>
             <hr>
-            <p>Location: {{ page.location_rating }}</p>
-            <p>Comfort: {{ page.comfort_rating }}</p>
-            <p>Food: {{ page.food_rating }}</p>
-            <p>Environment: {{ page.environment_rating }}</p>
-            <p class="ratings--disclaimer"></p>
+            <p>Location: <b style="font-size: 1.1em;">{{ page.location_rating }}</b> / 5</p>
+            <p>Comfort: <b style="font-size: 1.1em;">{{ page.comfort_rating }}</b> / 5</p>
+            <p>Food: <b style="font-size: 1.1em;">{{ page.food_rating }}</b> / 5</p>
+            <p>Environment: <b style="font-size: 1.1em;">{{ page.environment_rating }}</b> / 5</p>
+            <p class="ratings--disclaimer">*These ratings are entirely unscientific. They are collected from current/past residents.</p>
             <hr>
             {{ content }}
         </article>

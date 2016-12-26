@@ -1,4 +1,4 @@
-var app = angular.module('housingApp', ['ngRoute', 'LocalStorageModule'],
+var app = angular.module('housingApp', ['LocalStorageModule'],
     function ($interpolateProvider) {
         $interpolateProvider.startSymbol('[[');
         $interpolateProvider.endSymbol(']]');
@@ -56,9 +56,6 @@ app.filter('orderObjectBy', function () {
     return function (input, attribute) {
         if (!angular.isObject(input)) return input;
 
-        // choose filtration order
-
-
         // Filter out angular objects.
         var array = [];
         for (var objectKey in input) {
@@ -87,10 +84,7 @@ app.filter('orderObjectBy', function () {
 });
 
 app.controller('homepageController', function ($scope, localStorageService) {
-    $scope.mobile = false;
-    if (window.innerWidth < 768) {
-        $scope.mobile = true;
-    }
+    (window.innerWidth < 768) ? $scope.mobile = true : $scope.mobile = false;
     // start data
     $scope.geoData = {
             "type": "FeatureCollection",
@@ -98,11 +92,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 0,
                         "name": "Andrews",
                         "address": "2401 Whitis Avenue",
                         "link": "andrews",
@@ -158,11 +148,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 1,
                         "link": "blanton",
                         "name": "Blanton",
                         "address": "2500 University Avenue",
@@ -242,11 +228,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 2,
                         "name": "Brackenridge",
                         "link": "brackenridge",
                         "address": "303 East 21st Street",
@@ -318,11 +300,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 3,
                         "link": "carothers",
                         "name": "Carothers",
                         "address": "2501 Whitis Avenue",
@@ -370,11 +348,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 4,
                         "link": "creekside",
                         "name": "Creekside",
                         "address": "2500 San Jacinto Blvd",
@@ -470,11 +444,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 5,
                         "link": "duren",
                         "name": "Duren",
                         "address": "2604 Whitis Avenue",
@@ -570,11 +540,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 6,
                         "name": "Jester East",
                         "link": "jestereast",
                         "address": "201 East 21st Street",
@@ -694,11 +660,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 7,
                         "name": "Jester West",
                         "link": "jesterwest",
                         "address": "201 East 21st Street",
@@ -794,11 +756,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 8,
                         "link": "kinsolving",
                         "name": "Kinsolving",
                         "address": "2605 Whitis Avenue",
@@ -902,11 +860,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 9,
                         "link": "littlefield",
                         "name": "Littlefield",
                         "address": "2503 Whitis Avenue",
@@ -978,11 +932,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 10,
                         "name": "Moore-Hill",
                         "link": "moore-hill",
                         "address": "304 East 21st Street",
@@ -1086,11 +1036,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 11,
                         "name": "Prather",
                         "link": "prather",
                         "address": "305 East 21st Street",
@@ -1154,11 +1100,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 12,
                         "name": "Roberts",
                         "link": "roberts",
                         "address": "303 East 21st Street",
@@ -1246,11 +1188,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 13,
                         "name": "San Jacinto",
                         "link": "sanjacinto",
                         "address": "309 East 21st Street",
@@ -1450,11 +1388,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 {
                     "type": "Feature",
                     "properties": {
-                        "stroke": "#994500",
-                        "stroke-width": 2,
-                        "stroke-opacity": 1,
-                        "fill": "#BF5700",
-                        "fill-opacity": 0.5,
+                        "id": 14,
                         "link": "whitiscourt",
                         "name": "Whitis Court",
                         "address": "2610 Whitis Avenue",
@@ -1542,16 +1476,30 @@ app.controller('homepageController', function ($scope, localStorageService) {
             ]
         };
 
-    $scope.buildMap = function (map, filter) {
+    $scope.buildMap = function (map) {
 
-        map.on('load', function(e) {
-            // Add the stores data as a source
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+                var context = this,
+                    args = arguments;
+                var later = function () {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
+        map.on('load', function() {
             map.addSource('dorms', {
                 type: 'geojson',
                 data: $scope.geoData
             });
 
-            // Add a layer to the map with styling rules to render the source
             map.addLayer({
                 id: 'dorms',
                 type: 'fill',
@@ -1559,7 +1507,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 paint: {
                     'fill-color': '#bf5700',
                     'fill-outline-color': '#994500',
-                    'fill-opacity': 0.5
+                    'fill-opacity': 0.75
                 }
             });
 
@@ -1586,23 +1534,20 @@ app.controller('homepageController', function ($scope, localStorageService) {
         });
 
         if ($scope.mobile === true) {
+            map.setCenter([-97.737, 30.287]);
             map.on('click', function(e) {
                 map.setFilter("dorm_highlight", ["==", "name", ""]);
                 var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
                 if (!features.length) {
                     return;
-                }
-
-                if (features.length) {
-                    map.setFilter("dorm_highlight", ["==", "name", features[0].properties.name]);
                 } else {
-                    map.setFilter("dorm_highlight", ["==", "name", ""]);
+                    map.setFilter("dorm_highlight", ["==", "name", features[0].properties.name]);
                 }
 
                 var feature = features[0];
 
                 map.flyTo({
-                    center: [map.unproject(e.point).lng, map.unproject(e.point).lat],
+                    center: map.unproject(e.point),
                     zoom: 17
                 });
 
@@ -1614,24 +1559,19 @@ app.controller('homepageController', function ($scope, localStorageService) {
 
                 // unholy chain of appends
                 var list_parent = $('#mobile-listings');
-                if (list_parent.children().length > 0) {
+                if (list_parent.children().length > 0)
                     list_parent.empty();
-                }
+                // please forgive me
                 list_parent.append('<div class="homepage--listitem"><a class="homepage--listitem__name" href="/' + prop.link + '" >' + prop.name + '</a><div class="homepage--listitem__address">' + prop.address + '</div><div class="homepage--listitem__rating">Average Rating: <b>' + prop.average.toFixed(1) + '</b> / 5</div><div class="homepage--listitem__details">Beginning Price: $' + prop.price + ' | Gender: ' + capFirst(prop.gender) + ' | Area: ' + capFirst(prop.area) + '</div>');
                 });
         } else {
             map.on('mousemove', function (e) {
                 $('.homepage--listitem').removeClass('homepage--listitem__active');
                 var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
+                map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
                 if (!features.length) {
                     popup.remove();
                     return;
-                }
-
-                if (features.length) {
-                    map.setFilter("dorm_highlight", ["==", "name", features[0].properties.name]);
-                } else {
-                    map.setFilter("dorm_highlight", ["==", "name", ""]);
                 }
 
                 var feature = features[0];
@@ -1649,9 +1589,6 @@ app.controller('homepageController', function ($scope, localStorageService) {
                     .addTo(map);
             });
 
-            map.on("mouseout", function() {
-                map.setFilter("dorm_highlight", ["==", "name", ""]);
-            });
 
             map.on('click', function (e) {
                 map.setFilter("dorm_highlight", ["==", "name", ""]);
@@ -1659,12 +1596,8 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
                 if (!features.length) {
                     return;
-                }
-
-                if (features.length) {
-                    map.setFilter("dorm_highlight", ["==", "name", features[0].properties.name]);
                 } else {
-                    map.setFilter("dorm_highlight", ["==", "name", ""]);
+                    map.setFilter("dorm_highlight", ["==", "name", features[0].properties.name]);
                 }
 
                 var feature = features[0];
@@ -1674,17 +1607,12 @@ app.controller('homepageController', function ($scope, localStorageService) {
                     zoom: 17
                 });
 
-                var currentListing = $('#dorm-listing-' + feature.properties.link);
+                var currentListing = document.getElementById('#dorm-listing-' + feature.properties.link);
 
                 if (currentListing !== null) {
                     currentListing.addClass('homepage--listitem__active');
                     currentListing.get(0).scrollIntoView();
                 }
-            });
-
-            map.on('mousemove', function (e) {
-                var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
-                map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
             });
         }
 
@@ -1716,7 +1644,6 @@ app.controller('homepageController', function ($scope, localStorageService) {
     });
 
     $scope.compareAction = {
-        element: $('.compare'),
         show: false,
         addToList: function(index) {
             function containsObject(obj, list) {
@@ -1738,11 +1665,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
         }
     };
 
-    $scope.credits = {
-        show: false
-    };
-
+    $scope.credits = false;
     $scope.alphabetical = true;
-    $scope.rating = false;
 });
 

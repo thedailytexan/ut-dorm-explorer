@@ -2,35 +2,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href='{{ page.url | replace:"index.html","" | prepend: site.baseurl | prepend: site.url }}'>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-    <script src="/js/angular-local-storage.min.js"></script>
+    <title>{% if page.title%}{{ page.title }} | {% endif %} UT-Austin Residence Hall Explorer | The Daily Texan</title>
+
     <script src="/js/jquery-2.2.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/flexibility.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="canonical" href='{{ page.url | replace:"index.html","" | prepend: site.baseurl | prepend: site.url }}'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i|Roboto+Mono:400,500" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 
-
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-    <title>{% if page.title%}{{ page.title }} | {% endif %} UT-Austin Residence Hall Explorer | The Daily Texan</title>
     <meta name="description" content="Picking on-campus housing is a stressful process. We've got you covered.">
     <meta property="og:site_name" content="Daily Texan Features" />
     <meta property="og:title" content="UT-Austin Residence Hall Explorer" />
-    <meta property="og:url" content="http://dailytexanonline.com/features/reshallexplorer" />
+    <meta property="og:url" content="http://dailytexanonline.com/features/residencehallexplorer" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Picking on-campus housing is a stressful process. We've got you covered." />
     <meta property="og:image" content="" />

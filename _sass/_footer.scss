@@ -75,3 +75,7 @@
     }
   }
 }
+
+.footer-icon:hover {
+  color: darken($brand-color, 10%);
+}

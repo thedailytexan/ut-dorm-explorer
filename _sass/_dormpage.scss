@@ -118,15 +118,15 @@ img {
 
 .ratings--disclaimer {
   color: #a0a0a0;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: italic;
 }
+
 .post-header {
   margin-bottom: $spacing-unit;
 }
 
 .post-title {
-  font-size: 42px;
   letter-spacing: -1px;
   line-height: 1;
   font-size: 6rem;
@@ -139,10 +139,12 @@ img {
   @include media-query($on-laptop) {
     font-size: 4rem;
   }
+
   @include media-query($on-tablet) {
     text-align: left;
     font-size: 6rem;
   }
+
 }
 
 .post-address {
@@ -177,48 +179,80 @@ img {
 
 article {
   margin-top: 1rem;
+
   h1, h2, h3, h4 {
     color: $text-color;
     font-family: $header-font-family;
     font-weight: normal;
   }
+
   h4, h5, h6 {
     color: $text-color;
     font-family: $header-font-family;
     font-weight: 300;
   }
+
   h5 {
+    // student names
     color: $text-color;
     font-style: italic;
     font-size: 1.6rem;
-    @include media-query($on-mobile){
-      font-size: 1.8rem;
-    }
+    font-weight: 700;
+    font-family: $base-font-family;
+    // margin-bottom to create spacing
+    margin-bottom: 2em;
   }
+
   p {
+    // actual written content
     color: $text-color;
     line-height: $base-line-height;
     font-size: 1.5rem;
   }
+
   blockquote {
-    border-left-color: lighten($brand-color, 10%);
+
+    &:before {
+      color: $brand-color;
+      content: open-quote;
+      font-size: 2em;
+      font-style: italic;
+      font-family: "Palatino", $header-font-family, serif;
+    }
+
+    &:after {
+      color: $brand-color;
+      content: close-quote;
+      font-size: 2em;
+      font-style: italic;
+      font-family: "Palatino", $header-font-family, serif;
+    }
+
+    border: none;
     padding-left: 1rem;
     margin-top: 1em;
+
     p {
       font-family: $header-font-family;
       font-weight: 300;
-      font-size: 2.25rem;
-      color: $grey-color-dark;
+      font-size: 2.5rem;
       font-style: italic;
+      color: $grey-color-dark;
       display: inline;
+      line-height: .5;
+
       @include media-query($on-mobile){
         font-size: 2.5rem;
       }
+
     }
+
   }
+
   hr {
-    margin: 1em 0 1em 0;
+    margin: 1.5em 0 1.5em 0;
   }
+
 }
 
 #minimap {

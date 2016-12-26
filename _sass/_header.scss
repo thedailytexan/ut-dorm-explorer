@@ -56,6 +56,10 @@
   font-weight: bold;
   padding-left: 2em;
 
+  @include media-query($on-laptop) {
+    padding-left: 1em;
+  }
+
   @include media-query($on-tablet) {
     margin-bottom: .5em;
     padding-left: 0;
@@ -65,6 +69,7 @@
     color: #fff;
     font-family: $mono-font-family;
     font-size: 1.25em;
+    font-weight: 500;
 
     &:hover {
       color: #313131 !important;
@@ -80,6 +85,9 @@
     font-family: $base-font-family;
     font-size: 1em;
     margin-left: .5em;
+    font-weight: 700;
+    padding-top: .15em;
+
     &:hover {
       color: #313131 !important;
     }

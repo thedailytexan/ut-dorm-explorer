@@ -5,7 +5,7 @@
             <p class="homepage--listings__copy">Created by <a href="" class="homepage--listings__copy" style="font-weight: bold;font-style: italic;">The Daily Texan</a></p>
             <p class="homepage--listings__copy">Selecting housing can be a daunting task. We've got you covered  &mdash;  use the map and listings to select and compare dorms, or click on the link to view detailed information.</p>
         </div>
-        <div class="homepage--listings__filter flex" ng-cloak ng-if="mobile===false">
+        <div class="homepage--listings__filter flex" ng-cloak ng-show="mobile===false">
             <p>Filter by:</p>
             <button class="btn btn-sm" ng-click="alphabetical = true">Alphabetical</button>
             <button class="btn btn-sm" ng-click="alphabetical = false">Rating (high-low)</button>
@@ -14,22 +14,22 @@
         <div class="homepage--listings__container" id="mobile-listings" ng-if="mobile===true">
             <p class="homepage--listings__placeholder">Select a dorm from the map...</p>
         </div>
-        <div class='homepage--listings__container' ng-if="alphabetical === true && mobile === false">
+        <div class='homepage--listings__container' ng-cloak ng-if="alphabetical === true && mobile === false">
             <div ng-repeat="dorm in geoData.features" class="homepage--listitem" id="dorm-listing-[[ dorm.properties.link ]]">
-                <a href="/[[ dorm.properties.link ]]" class="homepage--listitem__name">[[ dorm.properties.name ]]</a>
-                <i class="fa fa-plus homepage--listitem__addtolist" ng-click="compareAction.addToList($index)" data-toggle="tooltip" title="Add to your list" data-placement="bottom"></i>
-                <div class="homepage--listitem__address">[[ dorm.properties.address ]]</div>
-                <div class="homepage--listitem__rating">Average rating: <b>[[ dorm.properties.average ]]</b> / 5</div>
-                <p class="homepage--listitem__details">Beginning Price: $[[dorm.properties.price]] | Gender: [[ dorm.properties.gender | camelcase ]] | Area: [[ dorm.properties.area | camelcase ]]</p>
+                <a href="/[[ dorm.properties.link ]]" class="homepage--listitem__name">[[ ::dorm.properties.name ]]</a>
+                <i class="fa fa-plus homepage--listitem__addtolist" ng-click="compareAction.addToList(dorm.properties.id)" data-toggle="tooltip" title="Add to your list" data-placement="bottom"></i>
+                <div class="homepage--listitem__address">[[ ::dorm.properties.address ]]</div>
+                <div class="homepage--listitem__rating">Average rating: <b>[[ ::dorm.properties.average ]]</b> / 5</div>
+                <p class="homepage--listitem__details">Beginning Price: $[[ ::dorm.properties.price]] | Gender: [[ ::dorm.properties.gender | camelcase ]] | Area: [[ ::dorm.properties.area | camelcase ]]</p>
             </div>
         </div>
-        <div class='homepage--listings__container' ng-if="alphabetical === false && mobile === false">
+        <div class='homepage--listings__container' ng-cloak ng-if="alphabetical === false && mobile === false">
             <div ng-repeat="dorm in geoData.features | orderObjectBy: 'properties.average'" class="homepage--listitem" id="dorm-listing-[[ dorm.properties.link ]]">
-                <a href="/[[ dorm.properties.link ]]" class="homepage--listitem__name">[[ dorm.properties.name ]]</a>
-                <i class="fa fa-plus homepage--listitem__addtolist" ng-click="compareAction.addToList($index)" data-toggle="tooltip" title="Add to your list" data-placement="bottom"></i> <!-- FIXME: $index does not work here -->
-                <div class="homepage--listitem__address">[[ dorm.properties.address ]]</div>
-                <div class="homepage--listitem__rating">Average rating: <b>[[ dorm.properties.average ]]</b> / 5</div>
-                <p class="homepage--listitem__details">Beginning Price: $[[dorm.properties.price]] | Gender: [[ dorm.properties.gender | camelcase ]] | Area: [[ dorm.properties.area | camelcase ]]</p>
+                <a href="/[[ dorm.properties.link ]]" class="homepage--listitem__name">[[ ::$index + 1 ]]. [[ ::dorm.properties.name ]]</a>
+                <i class="fa fa-plus homepage--listitem__addtolist" ng-click="compareAction.addToList(dorm.properties.id)" data-toggle="tooltip" title="Add to your list" data-placement="bottom"></i> <!-- FIXME: $index does not work here -->
+                <div class="homepage--listitem__address">[[ ::dorm.properties.address ]]</div>
+                <div class="homepage--listitem__rating">Average rating: <b style="font-size: 1.5em;">[[ ::dorm.properties.average ]]</b> / 5</div>
+                <p class="homepage--listitem__details">Beginning Price: $[[ ::dorm.properties.price ]] | Gender: [[ ::dorm.properties.gender | camelcase ]] | Area: [[ ::dorm.properties.area | camelcase ]]</p>
             </div>
         </div>
         <div class="homepage--footer">
@@ -37,7 +37,7 @@
                 Technical problems? Corrections? <a href="mailto:managingeditor@dailytexanonline.com?Subject=Housing%20interactive%20bug%20reporting" target="_top">Let us know.</a>
             </p>
             <p class="homepage--footer__copy" style="margin-bottom: 0;">Lived on campus? <a href="#" target="_top">Contribute to this explorer!</a></p>
-            <p class="homepage--footer__copy" ng-click="credits.show = true"><a href="#">Full credits & methodology</a></p>
+            <p class="homepage--footer__copy" ng-click="credits = true"><a href="#">Full credits & methodology</a></p>
         </div>
     </div>
     <mapbox id="main-map" callback="buildMap" ng-if="mobile===false "ng-cloak></mapbox>
@@ -45,7 +45,7 @@
         <p class="homepage--compare__header">Your Residence Hall List</p>
         <p class="homepage--compare_-directions" ng-show="selected_comparisons.length <= 1">Click the <i style="color: #333" class="fa fa-plus"></i> in the list to add and compare two or more dorms. Your selections are saved between visits.</p>
         <div class="homepage--compare__item" ng-repeat="dorm in selected_comparisons">
-            <p>[[ dorm.properties.name ]]</p>
+            <p>[[ ::dorm.properties.name ]]</p>
             <i class="homepage--compare__remove fa fa-close" ng-click="compareAction.removeFromList($index)"></i>
         </div>
         <button ng-show="selected_comparisons.length > 1" class="btn btn-primary btn-sm" ng-click="compareAction.show = true">Compare</button>
