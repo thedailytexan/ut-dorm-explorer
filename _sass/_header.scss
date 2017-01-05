@@ -117,6 +117,12 @@
     font-weight: bold;
     margin-right: 2em;
 
+    &.dorm {
+      @include media-query($on-tablet) {
+        color: #337ab7 !important;
+      }
+    }
+
     @include media-query($on-tablet) {
       color: #fff !important;
       margin: 0 1em;
