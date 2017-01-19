@@ -17,22 +17,24 @@
 
 {% include footer.html %}
 
+<script src="/js/bundle.js"></script>
 <script>
     $(document).ready(function(){
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
-        $('.selectpicker').selectpicker({
+        var dorm_selector = $('.selectpicker');
+        dorm_selector.selectpicker({
             dropupAuto: false
         });
-        $('.selectpicker').on('changed.bs.select', function(e){
+        dorm_selector.on('changed.bs.select', function(e){
             $(this).on('hide.bs.select', function(e){
-                window.location = '/' + $('.dropdown-toggle').attr('title');
+                var new_location = $('.bootstrap-select > button').attr('title').toString().replace(' ', '').toLowerCase();
+                window.location = '/' + new_location;
             });
         });
     });
 </script>
-<script src="/js/bundle.js"></script>
 <!--<script src="/js/jquery-2.2.2.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/flexibility.min.js"></script>-->

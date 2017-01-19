@@ -1,3 +1,5 @@
+"use strict";
+
 var app = angular.module('housingApp', ['LocalStorageModule'],
     function ($interpolateProvider) {
         $interpolateProvider.startSymbol('[[');
@@ -1562,7 +1564,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 if (list_parent.children().length > 0)
                     list_parent.empty();
                 // please forgive me
-                list_parent.append('<div class="homepage--listitem"><a class="homepage--listitem__name" href="/' + prop.link + '" >' + prop.name + '</a><div class="homepage--listitem__address">' + prop.address + '</div><div class="homepage--listitem__rating">Average Rating: <b>' + prop.average.toFixed(1) + '</b> / 5</div><div class="homepage--listitem__details">Beginning Price: $' + prop.price + ' | Gender: ' + capFirst(prop.gender) + ' | Area: ' + capFirst(prop.area) + '</div>');
+                list_parent.append('<div class="homepage--listitem"><a class="homepage--listitem__name" href="/' + prop.link + '" >' + prop.name + '</a><a class="homepage--listitem__prompt" href="/' + prop.link + '" >' + "<p style='font-size: 1.4rem; font-style: italic;'>Read resident reviews</p>" + '</a><div class="homepage--listitem__address">' + prop.address + '</div><div class="homepage--listitem__rating">Average Rating: <b>' + prop.average.toFixed(1) + '</b> / 5</div><div class="homepage--listitem__details">Beginning Price: $' + prop.price + ' | Gender: ' + capFirst(prop.gender) + ' | Area: ' + capFirst(prop.area) + '</div>');
                 });
         } else {
             map.on('mousemove', function (e) {
@@ -1591,10 +1593,10 @@ app.controller('homepageController', function ($scope, localStorageService) {
 
 
             map.on('click', function (e) {
-                map.setFilter("dorm_highlight", ["==", "name", ""]);
-                $('.homepage--listitem').removeClass('homepage--listitem__active');
                 var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
                 if (!features.length) {
+                    map.setFilter("dorm_highlight", ["==", "name", ""]);
+                    $('.homepage--listitem').removeClass('homepage--listitem__active');
                     return;
                 } else {
                     map.setFilter("dorm_highlight", ["==", "name", features[0].properties.name]);

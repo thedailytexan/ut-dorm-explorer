@@ -5,7 +5,7 @@ permalink: sanjacinto
 address: 309 East 21st Street
 maplink: https://goo.gl/maps/opeUVychZxQ2
 price: $12,791
-gender: Co-ed
+gender: Coed
 dining: Cypress Bend Cafe, Jester Center
 UTLink: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=130
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4

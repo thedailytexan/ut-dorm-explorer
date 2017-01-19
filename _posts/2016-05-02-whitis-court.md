@@ -5,7 +5,7 @@ permalink: whitiscourt
 address: 2610 Whitis Avenue
 maplink: https://goo.gl/maps/opeUVychZxQ2
 price: $10,223
-gender: Co-ed
+gender: Coed
 dining: Kinsolving, Littlefield Patio Cafe
 UTLink: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=117
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4

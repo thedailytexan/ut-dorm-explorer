@@ -1,12 +1,26 @@
 <div class="popup" ng-show="credits === true" ng-cloak>
     <div class="popup--overlay" ng-click="credits = false"></div>
     <div class="popup--container">
-        <div class="popup--info">
+        <div class="popup--info credits">
             <div class="popup--info__header">
                 <h3 style="font-weight: 400;">Full Credits & Methodology</h3>
                 <i class="fa fa-close" ng-click="credits = false"></i>
             </div>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h3>Development Team</h3>
+            <ul>
+                <li>Junyuan Tan - front/backend development, visual design, cartography</li>
+                <li>Samuel Limerick - Data visualization, cartography</li>
+                <li>Arjun Talpallikar - Data visualization, cartography</li>
+                <li>Alexandra Dolan - Visual design</li>
+                <li>Adam Humphrey - Residence hall histories</li>
+                <li>Shishir Jessu - Data parsing</li>
+                <li>Todd Raschen-Lim - Data parsing</li>
+                <li>Ruochen Wu - Data collection, verification</li>
+            </ul>
+            <h3>Methodology</h3>
+            <p>Data for ratings and reviews were gathered from respondents to a survey distributed by Daily Texan staff. Student reviews were reviewed and selected by Daily Texan staff.</p>
+            <p>Ratings were averaged for each of the four categories, and then aggregated again for the composite rating. Sample sizes may differ amongst different residence halls.</p>
+            <p>Price data were gathered from the official UT residence hall descriptions, and the lowest price was selected for each residence hall.</p>
         </div>
     </div>
 </div>

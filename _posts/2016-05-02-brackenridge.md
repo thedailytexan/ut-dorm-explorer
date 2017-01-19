@@ -5,7 +5,7 @@ permalink: brackenridge
 address: 303 East 21st Street
 maplink: https://goo.gl/maps/qvrx1ZugXEr
 price: $10,223
-gender: Co-Ed
+gender: Coed
 dining: Cypress Bend Cafe, Jester Center
 UTpage: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=142
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
@@ -20,13 +20,13 @@ next-dorm: carothers
 prev-dorm: blanton
 ---
 
-##History##
+##Description##
 
-Brackenridge is one of the oldest dormitories standing on campus today alongside Prather and Roberts. The three share a small courtyard between them complete with barbecue pits, and tables. Brackenridge itself also has a recreation area and kitchenette for its residents. The coed dormitory was can host 128 students (one of the smallest on campus) spread throughout four floors. It features community bathrooms and movable furniture in each room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Brackenridge.
+Brackenridge is one of the oldest dormitories standing on campus today. Brackenridge, Prather, and Roberts share a small courtyard between them complete with barbecue pits and tables. Brackenridge itself also has a recreation area and kitchenette for its residents. The coed residence hall hosts 128 students (one of the smallest on campus) on four floors. It features community bathrooms and movable furniture in each room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Brackenridge.
 
 ---
 
-#Student Reviews#
+#Resident Reviews#
 
 > Don't worry about newness of dorms or glamor. That usually will end up being a con rather than a pro.
 
@@ -45,6 +45,8 @@ Brackenridge is one of the oldest dormitories standing on campus today alongside
 
 #####Ben, computer science freshman#####
 
+_Have an opinion on this residence hall? [Share it with us!](https://goo.gl/forms/2FQQ17t7YAfFhlZT2)_
+
 ---
 
-_Residence hall history by Adam Humphrey_
+_Residence hall description by Adam Humphrey_

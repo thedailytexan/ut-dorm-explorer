@@ -27,14 +27,14 @@ layout: dorm
                     <i class="fa fa-external-link"></i> &nbsp; <a class="fact-link lower" href="{{ page.UTLink }}" target="_blank">UT Housing Description</a>
                 </li>
             </ul>
-            <a class="btn btn-sm sidebar--facts__nav" aria-label="home" href="/"><i class="fa fa-lg fa-home"></i>Home</a>
+            <a class="btn btn-sm sidebar--facts__nav" aria-label="home" href="/"><i class="fa fa-home"></i>Home</a>
             {% if page.prev-dorm %}
             <a class="btn btn-sm sidebar--facts__nav" aria-label="previous" href="/{{ page.prev-dorm }}"><i
-                    class="fa fa-lg fa-chevron-left"></i>{{ page.prev-dorm }}</a>
+                    class="fa fa-chevron-left"></i>{{ page.prev-dorm }}</a>
             {% endif %}
             {% if page.next-dorm %}
             <a class="btn btn-sm sidebar--facts__nav" aria-label="next" href="/{{ page.next-dorm }}"><i
-                    class="fa fa-lg fa-chevron-right"></i>{{ page.next-dorm | capitalize }}</a>
+                    class="fa fa-chevron-right"></i>{{ page.next-dorm | capitalize }}</a>
             {% endif %}
             <select name="dorm-dropdown" id="dorm-selector" class="selectpicker" data-live-search="true"
                     title="Choose a Residence Hall" style="font-size: 1rem;">

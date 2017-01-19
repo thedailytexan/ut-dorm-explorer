@@ -5,7 +5,7 @@ permalink: moore-hill
 address: 304 East 21st Street
 maplink: https://goo.gl/maps/zqFbmVbNAGD2
 price: $10,223
-gender: Co-ed
+gender: Coed
 dining: Jester Center, Cypress Bend Cafe
 UTLink: http://www.utexas.edu/student/housing/index.php?site=1&scode=4&id=131
 hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
