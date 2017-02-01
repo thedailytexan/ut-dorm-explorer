@@ -202,6 +202,7 @@
 
       &:hover {
         color: darken(#bf5700, 10%);
+        text-decoration: underline !important;
       }
     }
 
@@ -231,7 +232,7 @@
 // active
 
 .homepage--listitem__active {
-  background-color: #737373;
+  background-color: #608ba8;
   border: 0;
   color: #fff;
 
