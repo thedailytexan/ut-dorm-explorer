@@ -1532,7 +1532,8 @@ app.controller('homepageController', function ($scope, localStorageService) {
         // hide our listings when the user moves within the map
 
         var popup = new mapboxgl.Popup({
-            closeOnClick: false
+            closeOnClick: false,
+            closeButton: false
         });
 
         if ($scope.mobile === true) {
@@ -1568,8 +1569,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 });
         } else {
             map.on('mousemove', function (e) {
-                $('.homepage--listitem').removeClass('homepage--listitem__active');
-                var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
+               var features = map.queryRenderedFeatures(e.point, { layers: ['dorms'] });
                 map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
                 if (!features.length) {
                     popup.remove();
@@ -1581,6 +1581,7 @@ app.controller('homepageController', function ($scope, localStorageService) {
                 var currentListing = $('#dorm-listing-' + feature.properties.link);
 
                 if (currentListing !== null) {
+                    $('.homepage--listitem').removeClass('homepage--listitem__active');
                     currentListing.addClass('homepage--listitem__active');
                     currentListing.get(0).scrollIntoView();
 

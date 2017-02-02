@@ -4,9 +4,9 @@
   margin: auto;
   width: 100%;
   a {
-    color: #337ab7;
+    color: #0097B2;
     &:hover {
-      color: darken(#337ab7, 10%);
+      color: darken(#0097B2, 10%);
     }
   }
   @include media-query($on-tablet) {
