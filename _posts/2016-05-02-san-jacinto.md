@@ -1,7 +1,7 @@
 ---
 layout: post
 title: San Jacinto
-permalink: sanjacinto
+permalink: sanjacinto/
 address: 309 East 21st Street
 maplink: https://goo.gl/maps/opeUVychZxQ2
 price: $12,791

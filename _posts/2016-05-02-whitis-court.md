@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Whitis Court
-permalink: whitiscourt
+permalink: whitiscourt/
 address: 2610 Whitis Avenue
 maplink: https://goo.gl/maps/opeUVychZxQ2
 price: $10,223
