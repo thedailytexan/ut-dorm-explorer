@@ -10,9 +10,9 @@ url: "http://dailytexanonline.com" # the base hostname & protocol for your site
 
 
 # Build settings
+markdown: kramdown
 sass:
     style: compressed
-markdown: kramdown
 gems:
   - jekyll-angular
   - octopress-autoprefixer

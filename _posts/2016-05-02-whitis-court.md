@@ -20,13 +20,13 @@ prev-dorm: sanjacinto
 
 ---
 
-##Description##
+## Description ##
 
 Whitis Court has a unique story among UT’s fifteen residence halls. In 1999, the university bought two co-ops from a private company, and bought the other four in 2003 in order to transform them into a residence hall. Overall Whitis Court houses 197 students throughout the 6 buildings. Each building has movable furniture and community bathrooms. The dormitory features several large living rooms, community kitchens, a classroom facility and a conference room. The Drag (a major street parallel to campus with many dining and shopping options), the communication school, and Kinsolving Dining Hall are all near Whitis Court.
 
 ---
 
-#Resident Reviews#
+# Resident Reviews #
 
 > Know what you need. I chose Whitis Court because it's a small community, easy to make friends, and quiet. Other people I know requested transfers from Whitis because they thought nothing was ever going on.
 
@@ -34,11 +34,11 @@ Whitis Court has a unique story among UT’s fifteen residence halls. In 1999, t
 
 "It was slightly loud, but the location is better than I am right now. In addition with dealing with people, people have to understand that everyone comes from a different background so don't get mad at your roommate(s) if they don't do the same things as you do."
 
-#####Amy, linguistics sophomore#####
+##### Amy, linguistics sophomore #####
 
 "I know all the names of the people I see, and I trust everyone in my dorm. I love that it's small and tight knit. But it's definitely pretty quiet."
 
-#####Nicole, computer science freshman####
+##### Nicole, computer science freshman #####
 
 _Have an opinion on this residence hall? [Share it with us!](https://goo.gl/forms/2FQQ17t7YAfFhlZT2)_
 

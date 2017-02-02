@@ -20,7 +20,7 @@ next-dorm: duren
 prev-dorm: carothers
 ---
 
-##Description##
+## Description ##
 
 Creekside, built in 1955, is the University of Texas’ only all male residence hall. It can hold 190 men throughout two floors. Dorm room furniture is built into each room, and residents share community bathrooms as well as a computer lab. It features a sand volleyball court, barbecue pits, a kitchenette, and 24-hour visitation. The dormitory is uniquely situated on campus. It stands in the northeast section of the 40 Acres surrounded by the Cockrell School of Engineering buildings, Performing Arts Center, Butler School of Music buildings, and the fine arts buildings.
 
@@ -29,11 +29,11 @@ Creekside, built in 1955, is the University of Texas’ only all male residence 
 
 ---
 
-#Resident Reviews#
+# Resident Reviews #
 
 "For a week straight the hall smelled like weed and now it just smells like cigarettes. Don't live on campus."
 
-#####Ed, IRG freshman#####
+##### Ed, IRG freshman #####
 
 _Have an opinion on this residence hall? [Share it with us!](https://goo.gl/forms/2FQQ17t7YAfFhlZT2)_
 

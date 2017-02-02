@@ -20,13 +20,13 @@ next-dorm: carothers
 prev-dorm: blanton
 ---
 
-##Description##
+## Description ##
 
 Brackenridge is one of the oldest dormitories standing on campus today. Brackenridge, Prather, and Roberts share a small courtyard between them complete with barbecue pits and tables. Brackenridge itself also has a recreation area and kitchenette for its residents. The coed residence hall hosts 128 students (one of the smallest on campus) on four floors. It features community bathrooms and movable furniture in each room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Brackenridge.
 
 ---
 
-#Resident Reviews#
+# Resident Reviews #
 
 > Don't worry about newness of dorms or glamor. That usually will end up being a con rather than a pro.
 
@@ -34,16 +34,16 @@ Brackenridge is one of the oldest dormitories standing on campus today. Brackenr
 
 "After football games, my roommate and I open our windows and throw hook em signs at people going back home while singing The Eyes of Texas. We also dance at the same time. Live in BRP if you want a home-y, ivy league styles dorm!! It's also in really close proximity to JCL, Jesta Pizza, and J2. You're probably closer than people who live in Jester are."
 
-#####Aleiyah, business freshman#####
+##### Aleiyah, business freshman #####
 
 
 "It was an old dorm and I wouldn't have lived there without needing a dorm when my apartment fell through sophomore year, but it turned out amazingly. Don't worry about newness of dorms or glamor. That usually will end up being a con rather than a pro." 
 
-#####Taylor, advertising senior#####
+##### Taylor, advertising senior #####
 
 "Our room is right next to the Jester Center, so my roommate and I will occasionally get woken up by a semi-truck delivering food for J2/JCL at 2 AM. Cypress Bend is the best on-campus dining hall. If you are in Jester, it is worth the extra walk."
 
-#####Ben, computer science freshman#####
+##### Ben, computer science freshman #####
 
 _Have an opinion on this residence hall? [Share it with us!](https://goo.gl/forms/2FQQ17t7YAfFhlZT2)_
 
