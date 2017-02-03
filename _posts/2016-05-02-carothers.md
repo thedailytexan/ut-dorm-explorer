@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Carothers
-permalink: carothers
+permalink: carothers/
 address: 2501 Whitis Avenue
 maplink: https://goo.gl/maps/V98dPDU169U2
 price: $10,223

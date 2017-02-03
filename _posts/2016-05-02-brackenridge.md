@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Brackenridge
-permalink: brackenridge
+permalink: brackenridge/
 address: 303 East 21st Street
 maplink: https://goo.gl/maps/qvrx1ZugXEr
 price: $10,223

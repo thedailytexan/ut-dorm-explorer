@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Littlefield
-permalink: littlefield
+permalink: littlefield/
 address: 2503 Whitis Avenue
 maplink: https://goo.gl/maps/Zt9dTmgA5My
 price: $10,223

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creekside
-permalink: creekside
+permalink: creekside/
 address: 2500 San Jacinto Boulevard
 maplink: https://goo.gl/maps/ZQuXM2XwTto
 price: $10,223

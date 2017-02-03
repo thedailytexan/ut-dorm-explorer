@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kinsolving
-permalink: kinsolving
+permalink: kinsolving/
 address: 2605 Whitis Avenue
 maplink: https://goo.gl/maps/jjD3dzw4cky
 price: $10,223

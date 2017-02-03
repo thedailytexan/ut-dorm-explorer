@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Moore-Hill
-permalink: moore-hill
+permalink: moore-hill/
 address: 304 East 21st Street
 maplink: https://goo.gl/maps/zqFbmVbNAGD2
 price: $10,223
