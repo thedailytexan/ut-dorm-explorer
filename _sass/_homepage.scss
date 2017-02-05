@@ -301,6 +301,7 @@ a.popup--content__header {
   z-index: 3000;
   width: 20%;
   padding: 1em 2em;
+  overflow: scroll;
 
   @include media-query($on-tablet) {
     position: static;
