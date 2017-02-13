@@ -8,7 +8,8 @@ price: $10,223
 gender: All-female
 dining: Kinsolving
 UTLink: http://housing.utexas.edu/halls/kinsolving
-hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
+hero: /assets/img/dorms/2017-01-25_Kinsolving_Dorm_Thomas.Negrete105057.jpg
+hero_credit: Thomas Negrete
 iframe: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.1292001809215!2d-97.74182028487012!3d30.290383313867196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b582f6343421%3A0xe616f20f52f36d5e!2sKinsolving+Residence+Hall!5e0!3m2!1sen!2sus!4v1462317713758
 average_rating: 3.5
 location_rating: 3.2
@@ -21,6 +22,9 @@ prev-dorm: jesterwest
 ---
 
 ## Description ##
+
+![Kinsolving Residence Hall](/assets/img/dorms/2017-01-25_Kinsolving_Dorm_Thomas.Negrete105061.jpg)
+*Photo by Thomas Negrete*
 
 Kinsolving is one of two all female residence halls on campus. It is the larger of the two, with 735 residents spread throughout five floors. The residence hall was constructed in 1958, and features accessible accommodations, built-in furniture, community or connecting bathrooms, and a computer lab. There are many amenities in Kinsolving, including the Academic Community Center, Kin’s Market (a convenience store), a community garden, a 24-hour desk, a patio, and a sun deck. It also has a large buffet style dining hall. The Drag, the communication school, and the Student Services Building are all near Kinsolving.
 
@@ -62,6 +66,9 @@ Kinsolving is one of two all female residence halls on campus. It is the larger 
 "Choose the dorm that's closest to your college, so if you're in business, COLA, fine arts, try to stay in the Waller Creek area, and if you're communications or architecture, look into staying around Whitis. Waller Creek is where all the excitement happens, but if your classes are near Whitis, you're gonna find yourself hiking up there all the time."
 
 ##### Oksana, speech pathology freshman #####
+
+![Kinsolving Residence Hall](/assets/img/dorms/2017-01-25_Kinsolving_Dorm_Thomas.Negrete105125.jpg)
+*Photo by Thomas Negrete*
 
 _Have an opinion on this residence hall? [Share it with us!](https://goo.gl/forms/2FQQ17t7YAfFhlZT2)_
 

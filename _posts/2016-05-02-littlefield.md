@@ -8,7 +8,8 @@ price: $10,223
 gender: All-female
 dining: Kinsolving, Littlefield Patio Cafe
 UTLink: http://housing.utexas.edu/halls/littlefield
-hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
+hero: /assets/img/dorms/2017-01-25_Littlefield_Dorm_Thomas.Negrete104634.jpg
+hero_credit: Thomas Negrete
 iframe: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.1666371083256!2d-97.74192908487014!3d30.28931741391796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b582ef37abf9%3A0xb4cc8e5d47cdd4da!2sLittlefield+Dormitory%2C+2503+Whitis+Ave%2C+Austin%2C+TX+78705!5e0!3m2!1sen!2sus!4v1462317918455
 average_rating: 3.7
 location_rating: 3.7
@@ -22,7 +23,10 @@ prev-dorm: kinsolving
 
 ## Description ##
 
-Littlefield is the smaller of the female-only dormitories at UT. Built in 1927, it is also the oldest. The dormitory stands on the north side of the honors quad, is made up of three floors and holds 152 women. It features movable furniture and community bathrooms. Hand painted ceiling beams and a fireplace are only some of the nice architectural touches in the historical dorm that can only be appreciated from within. Littlefield Patio Cafe sits next to the dorm, allowing easy access to food for hungry students. The Drag, the communication school, and Kinsolving Dining Hall are all in close proximity to Littlefield.
+![Littlefield Residence Hall](/assets/img/dorms/2017-01-25_Littlefield_Dorm_Thomas.Negrete104588.jpg)
+*Photo by Thomas Negrete*
+
+Littlefield is the smaller of the female-only dormitories at UT. Built in 1927, it is also the oldest. The residence hall stands on the north side of the honors quad, is made up of three floors and holds 152 women. It features movable furniture and community bathrooms. Hand painted ceiling beams and a fireplace are only some of the nice architectural touches in the historical dorm that can only be appreciated from within. Littlefield Patio Cafe sits next to the dorm, allowing easy access to food for hungry students. The Drag, the communication school, and Kinsolving Dining Hall are all in close proximity to Littlefield.
 
 *Andrews, Blanton, Carothers and Littlefield are part of the Honors Living Community (also known as "The Quad"), which is open only to Honors Students and their chosen roommates.*
 

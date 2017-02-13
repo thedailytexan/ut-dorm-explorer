@@ -22,7 +22,7 @@ prev-dorm: roberts
 
 ## Description ##
 
-San Jacinto, commonly referred to as ‘San Jac,’ is the second newest dormitory on campus. Built in 2000, the large five floor coed dormitory houses 811 students each year. It provides accessible accommodations, movable furniture, private bathrooms and a computer lab. Cypress Bend Cafe sits on the ground floor providing a convenience store, restaurant and sandwich bar for students. The dormitory also has a game room, TV lounge, study lounges on each floor, and an amphitheater in the back. Darrell K Royal Memorial Stadium, Gregory Gym and Clark Field are all within close proximity to San Jacinto.
+San Jacinto, commonly referred to as ‘San Jac,’ is the second newest residence hall on campus. Built in 2000, the large five floor coed residence hall houses 811 students each year. It provides accessible accommodations, movable furniture, private bathrooms and a computer lab. Cypress Bend Cafe sits on the ground floor providing a convenience store, restaurant and sandwich bar for students. The residence hall also has a game room, TV lounge, study lounges on each floor, and an amphitheater in the back. Darrell K Royal Memorial Stadium, Gregory Gym and Clark Field are all within close proximity to San Jacinto.
 
 ---
 

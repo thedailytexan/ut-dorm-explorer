@@ -76,6 +76,24 @@
   }
 }
 
+.footer-icon {
+  background: #0097B2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1em;
+  width: 2em;
+  height: 2em;
+  i {
+    color: #fff !important;
+    font-size: 1.25rem;
+  }
+  &:hover {
+    background-color: darken(#0097B2, 10%);
+  }
+}
 .footer-icon:hover {
   color: darken($brand-color, 10%);
 }

@@ -46,9 +46,8 @@ layout: dorm
 
     </div>
     <div class="col-md-8 post--container">
-        <img src="{{ page.hero }}" class="img-responsive" alt="Andrews Dormitory">
-        <p class="post-meta">Photo Credit: <a href="http://www.dailytexanonline.com/author/junyuan-tan" target="_blank">Junyuan
-            Tan</a></p>
+        <img src="{{ page.hero }}" class="img-responsive" alt="{{ page.title }}">
+        <p class="post-meta">Photo by {{ page.hero_credit }}</p>
         <article class="post-content">
             <h1>Resident Ratings<sup>*</sup></h1>
             <p class="post--rating__average">Average: <b style="color: #bf5700; font-size: 1.5em;">{{ page.average_rating }}</b> / 5</p>
@@ -57,7 +56,7 @@ layout: dorm
             <p>Comfort: <b style="font-size: 1.1em;">{{ page.comfort_rating }}</b> / 5</p>
             <p>Food: <b style="font-size: 1.1em;">{{ page.food_rating }}</b> / 5</p>
             <p>Environment: <b style="font-size: 1.1em;">{{ page.environment_rating }}</b> / 5</p>
-            <p class="ratings--disclaimer">*These ratings are entirely unscientific. They are collected from current/past residents.</p>
+            <p class="ratings--disclaimer">*Ratings collected from current/past residents.</p>
             <hr>
             {{ content }}
         </article>

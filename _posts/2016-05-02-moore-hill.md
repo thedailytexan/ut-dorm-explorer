@@ -8,7 +8,8 @@ price: $10,223
 gender: Coed
 dining: Jester Center, Cypress Bend Cafe
 UTLink: http://housing.utexas.edu/halls/moore-hill
-hero: https://www.utexas.edu/sites/www.utexas.edu/files/styles/utexas_hero_photo_image/public/hero-photos/maincampus_hero.jpg?itok=i1E3qQY4
+hero: /assets/img/dorms/Dorm_Jester_Area944.jpg
+hero_credit: Yifan Lyu
 iframe: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.376889030476!2d-97.73796078487021!3d30.283330514202806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b59bf30ff859%3A0x51c260c952c433c!2sMoore-Hill+Dormitory!5e0!3m2!1sen!2sus!4v1462318191744
 average_rating: 3.9
 location_rating: 4.4
@@ -20,9 +21,11 @@ next-dorm: prather
 prev-dorm: littlefield
 ---
 
-## Description ##
+## Description 
 
-Moore-Hill was built over a 17 year period from 1939 to 1956. The sprawling coed dormitory spans four floors and houses 386 students. The furniture in each room is built-in, and community bathrooms are spread throughout. It has a 56-inch TV in its lounge and a recreation room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Moore-Hill.
+![Moore-Hill Residence Hall](/assets/img/dorms/Dorm_Jester_Area955.jpg)
+
+Moore-Hill was built over a 17 year period from 1939 to 1956. The sprawling coed residence hall spans four floors and houses 386 students. The furniture in each room is built-in, and community bathrooms are spread throughout. It has a 56-inch TV in its lounge and a recreation room. Darrell K Royal Memorial Stadium, Gregory Gym and the PCL are all within close proximity to Moore-Hill.
 
 ---
 
